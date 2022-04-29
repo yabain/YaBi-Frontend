@@ -1,0 +1,132 @@
+
+.addit{
+  width: 100%;
+  border-radius: 10px;
+  height: 150px;
+  background: url('../../../assets/foot.png');
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+ion-header {
+
+  ion-toolbar,
+  ion-item {
+    --background: #f1f5f8;
+    background: #f1f5f8;
+    padding: 0 10px;
+  }
+
+  ion-toolbar {
+    .bordered {
+      --border-radius: 10px;
+      --box-shadow: 5px 5px 10px #d1d1d1, -5px -5px 10px #FFFFFF;
+    }
+  }
+
+  ion-item {
+    h3 {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    ion-avatar {
+      --border-radius: 40%;
+    }
+  }
+
+}
+
+ion-content {
+  --background: linear-gradient(90deg, #2d7b4c 0%, #25653e 35%, #275C3C 100%);
+
+  .slides {
+    background: #f1f5f8;
+    padding: 2px 3px 5px 3px;
+    border-radius: 0 0 10px 10px;
+  }
+  ion-slide{
+    padding-right: 0 !important;
+    padding-left: 0px !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    width: 250px !important;
+    height: 300px !important;
+  }
+
+  ion-card {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 14px;
+    padding: 0px;
+    background: rgba(255, 255, 255, 0.8);
+
+    .main {
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+      padding: 0;
+      background: #FFFFFF;
+      box-shadow: 7px 7px 20px #dbdfe2,
+        -7px -7px 20px #ffffff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 30px;
+      }
+
+
+
+    }
+
+    .files {
+      padding-top: 14px;
+    }
+
+  }
+
+  .container {
+    padding: 2px 3px;
+    color: rgba(6, 6, 6, 0.892);
+
+    ion-item {
+      --background: rgb(255, 255, 255);
+      padding: 0;
+      margin: 2px 0;
+      --border-radius: 5px;
+      color: #1f1f1f;
+      font-weight: 600;
+
+      ion-label {
+        padding: 3px 0;
+
+        h4 {
+          font-weight: 600;
+          font-size: 16px;
+          color: rgba(6, 6, 6, 0.892);
+        }
+
+        h6 {
+          color: rgba(6, 6, 6, 0.892);
+        }
+      }
+
+    }
+
+    h2 {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
+  }
+
+}

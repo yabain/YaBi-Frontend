@@ -1,0 +1,42 @@
+<ion-content>
+  <div class="background-pic">
+    <div class="background-filter">
+      <div class="shape"><img src="../../assets/shape.svg" /></div>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            <b> Enregistrement </b>
+          </ion-card-title>
+          <!-- <ion-card-subtitle>
+            Create Your <strong>account</strong> by filling
+            up the form
+          </ion-card-subtitle> -->
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input type="text" placeholder="Nom"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Prénom"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="tel" placeholder="Numéro de téléphone"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="email" placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" placeholder="Mot de passe"></ion-input>
+          </ion-item>
+
+          <div class="bottom-section">
+            <ion-button type="submit" (click)="submit()">S'enregistrer</ion-button>
+            <span> Vous avez déjà un compte ? <a (click)="navigateToSigninPage()">Connexion</a></span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>

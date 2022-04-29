@@ -1,0 +1,72 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="padding-left: 3px;">
+    <ion-item slot="start" lines="none" style="padding-top: 15px; border-radius: 15px;padding-left: 0px;">
+
+      <ion-avatar slot="start" (click)="navigateToLoginPage()">
+        <img src="../../../assets/user.png">
+      </ion-avatar>
+      <ion-label>
+        <p></p>
+        <h3 style="color: black;font-family: Georgia, serif !important;">User Name</h3>
+      </ion-label>
+
+    </ion-item>
+
+    <ion-buttons slot="end"><br>
+      <ion-button class="bordered" fill="solid" color="#275C3C" style="color: #275C3C">
+        <ion-icon color="custom" name="notifications" style="color: aliceblue;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-router-outlet style="background-color: white;"></ion-router-outlet>
+</ion-content>
+
+<!-- <ion-footer> -->
+  <div class="middle-button-container">
+    <p style="text-align:center;">
+      <ion-fab style="margin-top: -75px; margin-left: -30px;">
+        <ion-fab-button style="--background:#FFFFFF" size="small">
+          <ion-icon name="add-circle" style="width: 30px; height: 30px; color:#275C3C" size="large"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </p>
+  </div>
+
+  <ion-tabs>
+
+    <ion-tab-bar slot="bottom">
+
+      <ion-tab-button>
+
+        <ion-icon name="apps" style="width: 22px; height: 22px;color: #275C3C"></ion-icon>
+
+      </ion-tab-button>
+
+      <ion-tab-button (click)="navigateToHomePage()">
+
+        <ion-icon name="home" style="width: 22px; height: 22px; color:#275C3C"></ion-icon>
+        <!-- <ion-icon src="assets/bookmark.svg"></ion-icon> -->
+      </ion-tab-button>
+
+      <ion-tab-button>
+        <!-- <ion-icon src="assets/Location.svg"></ion-icon> -->
+      </ion-tab-button>
+
+      <ion-tab-button (click)="navigateToSearchPage()">
+        <ion-icon style="width: 22px; height: 22px; color:#275C3C" name="search"></ion-icon>
+      </ion-tab-button>
+      
+      <ion-tab-button (click)="navigateToProfilePage()">
+        <ion-icon style="width: 22px; height: 22px; color:#275C3C" name="person-circle"></ion-icon>
+        <!-- <ion-icon style="color:#275C3C" src="assets/account_circle.svg"></ion-icon> -->
+      </ion-tab-button>
+
+    </ion-tab-bar>
+
+  </ion-tabs>
+
+<!-- </ion-footer> -->
