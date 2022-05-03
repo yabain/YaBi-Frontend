@@ -1,23 +1,26 @@
+<app-title [title]="title"></app-title>
+
 <ion-content [fullscreen]="true">
 
- <div id="container"> 
-  
-   <div class="searchbar" style="padding-top: 55px;">
-     <ion-searchbar placeholder="Rechercher un évènement" no-shadow style="border-color: #F4FAF6;">  
-     </ion-searchbar>
+  <div id="container">
 
-     <!-- Main Featured Products Section -->
-   
-     <div class="main-featured-products">
+    <div class="searchbar" style="padding-top: 0px;">
+      <ion-searchbar placeholder="Rechercher un évènement" no-shadow
+        style="color: black;border: #275c3c2a; border-style: dotted; border-radius: 20px;">
+      </ion-searchbar>
+
+      <!-- Main Featured Products Section -->
+
+      <div class="main-featured-products">
         <!-- ion slider for the feature products -->
 
-      <ion-slides pager="true" [options]="options" (click)="appRating()">
-        <!-- slider one -->
+        <ion-slides pager="true" [options]="options" (click)="appRating()">
+          <!-- slider one -->
 
-      </ion-slides>
-     </div>
+        </ion-slides>
+      </div>
 
- </div>
- </div>
+    </div>
+  </div>
 
 </ion-content>

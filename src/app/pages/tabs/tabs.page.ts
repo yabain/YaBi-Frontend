@@ -15,19 +15,48 @@ export class TabsPage implements OnInit {
   navigateToProfilePage() {
     this.router.navigate(['tabs/profile']);
   }
-
   navigateToHomePage() {
     this.router.navigate(['tabs/home']);
   }
-
   navigateToLoginPage()
   {
     this.router.navigate(['login']);
   }
-
   navigateToSearchPage()
   {
     this.router.navigate(['tabs/search']);
   }
+  navigateToCategoriesPage()
+  {
+    this.router.navigate(['tabs/categories']);
+  }
+  navigateToBillesPage()
+  {
+    this.router.navigate(['tabs/billes']);
+  }
 
+  navigateToFavorisPage()
+  {
+    this.router.navigate(['tabs/favoris']);
+  }
+  navigateToInvitationsPage()
+  {
+    this.router.navigate(['tabs/invitations']);
+  }
+  navigateToNotificationsPage()
+  {
+    this.router.navigate(['tabs/notifications']);
+  }
+  navigateToWalletPage()
+  {
+    this.router.navigate(['tabs/wallet']);
+  }
+  navigateToHistoryPage()
+  {
+    this.router.navigate(['tabs/history']);
+  }
+  navigateToAboutPage()
+  {
+    this.router.navigate(['tabs/about']);
+  }
 }

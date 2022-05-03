@@ -1,10 +1,32 @@
-<ion-content>
-  <div class="slides ion-margin-bottom" style="padding-top: 60px;">
+<ion-header class="ion-no-border"style="padding-top: 5px; padding-button: 5px; margin-button: 0">
+  <ion-toolbar style="padding-left: 3px;">
+    <ion-item slot="start" lines="none" style="padding-top: 15px; border-radius: 15px;padding-left: 0px;">
 
-    <p style="color: black; margin-left: 15px; padding-bottom: 0px; margin-bottom: 0px; font-family: Georgia, serif !important;"><b> A la une</b></p>
+      <ion-avatar slot="start" (click)="navigateToLoginPage()">
+        <img src="../../../assets/user.png">
+      </ion-avatar>
+      <ion-label>
+        <p></p>
+        <h3 style="color: black;font-family: Georgia, serif !important;">Utilisateur 1</h3>
+      </ion-label>
+
+    </ion-item>
+
+    <ion-buttons slot="end"><br>
+      <ion-button class="bordered" fill="solid" color="#275C3C" style="color: #275C3C">
+        <ion-icon color="custom" name="notifications" style="color: aliceblue;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content style="padding-top: 0px; margin-top: 0px;">
+  <div class="slides ion-margin-bottom" style="padding-top: 0px;">
+
+    <p style="color: black; margin-left: 15px;margin-top: 0px; padding-bottom: 0px;padding-top: 3px; margin-bottom: 0px; font-family: Georgia, serif !important;"><b> A la une</b></p>
     <ion-slides [options]="slidesOptions">
       <ion-slide>
-        <ion-card>
+        <ion-card style="background-color: white !important;" (click)="eventPage()">
           <ion-card-header class="addit">
             <div>
               <div class="main">
@@ -129,7 +151,7 @@
 
 
   <div class="container" style="margin-top: 0px; padding-top: 0px;">
-    <h3 style="color: aliceblue; font-family: Georgia, serif !important; margin-left: 10px;"><b> Actualité </b></h3>
+    <h3 style="color: aliceblue; font-family: Georgia, serif !important; margin-left: 10px; font-size: 1em"><b> Évènements </b></h3>
     <ion-item lines="none">
       <ion-grid>
         <ion-row class="ion-align-items-center">

@@ -1,72 +1,118 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar style="padding-left: 3px;">
-    <ion-item slot="start" lines="none" style="padding-top: 15px; border-radius: 15px;padding-left: 0px;">
+<ion-router-outlet style="background-color: white;"></ion-router-outlet>
 
-      <ion-avatar slot="start" (click)="navigateToLoginPage()">
-        <img src="../../../assets/user.png">
-      </ion-avatar>
-      <ion-label>
-        <p></p>
-        <h3 style="color: black;font-family: Georgia, serif !important;">User Name</h3>
-      </ion-label>
+<ion-menu side="start" menuId="first" contentId="main">
+  <ion-header>
+    <ion-toolbar class="background-menu" style="padding-top: 30px;">
+      <ion-title>YaBi</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content style="background-color: white;">
+    <div class="item" (click)="navigateToCategoriesPage()">
+      <i class="fa fa-calendar-o" style="font-size: 25px"></i>
+        <span>Catégories</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
+    </div>
+    <div class="item" (click)="navigateToBillesPage()">
+      <i class="fa fa-barcode" style="font-size: 25px"></i>
+        <span>Mes billets</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
+    </div>
+    <div class="item" (click)="navigateToFavorisPage()">
+      <i class="fa fa-bookmark-o" style="font-size: 25px"></i>
+        <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+        <span>Mes favoris</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
+    </div>
+    <div class="item" (click)="navigateToInvitationsPage()">
+      <i class="fa fa-folder-open-o" style="font-size: 25px"></i>
+        <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+        <span>Mes invitations</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
+    </div>
+    <div class="item" (click)="navigateToWalletPage()">
+      <i class="fas fa-wallet" style="font-size: 25px"></i>
+        <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+        <span>YaBi wallet</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
+    </div>
+    <div class="item" (click)="navigateToHistoryPage()">
+      <i class="fa fa-history" style="font-size: 25px"></i>
+        <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+        <span>Mon historique</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
+    </div>
+    <div class="item">
+    </div>
+    <div class="item">
+    </div>
+    <div class="item">
+      <i class="fa fa-info-circle" style="font-size: 25px"></i>
+        <span>A propos</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
+    </div>
+    <!-- <ion-list>
+      <ion-item>Menu Item</ion-item>
+    </ion-list> -->
+  </ion-content>
+</ion-menu>
 
-    </ion-item>
+<div class="middle-button-container">
+  <p style="text-align:center;">
+    <ion-fab style="margin-top: -75px; margin-left: -30px;">
+      <ion-fab-button style="--background:#FFFFFF" size="small">
+        <ion-icon name="add-circle" style="width: 30px; height: 30px; color:#275C3C" size="large"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </p>
+</div>
 
-    <ion-buttons slot="end"><br>
-      <ion-button class="bordered" fill="solid" color="#275C3C" style="color: #275C3C">
-        <ion-icon color="custom" name="notifications" style="color: aliceblue;"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+<ion-tabs>
 
-</ion-header>
+  <ion-tab-bar slot="bottom" style="background: #eef2ee; !important;">
 
-<ion-content>
-  <ion-router-outlet style="background-color: white;"></ion-router-outlet>
-</ion-content>
+        <ion-tab-button style="background: #eef2ee; !important;">
+          <div id="main" style="background: #eef2ee; !important;">
+            <ion-menu-toggle style="background: #eef2ee; !important;">
 
-<!-- <ion-footer> -->
-  <div class="middle-button-container">
-    <p style="text-align:center;">
-      <ion-fab style="margin-top: -75px; margin-left: -30px;">
-        <ion-fab-button style="--background:#FFFFFF" size="small">
-          <ion-icon name="add-circle" style="width: 30px; height: 30px; color:#275C3C" size="large"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
-    </p>
-  </div>
+          <ion-icon name="apps" style="width: 22px; height: 22px;color: #275C3C"></ion-icon>
+        </ion-menu-toggle>
+      </div>
 
-  <ion-tabs>
+        </ion-tab-button>
 
-    <ion-tab-bar slot="bottom">
+    <ion-tab-button (click)="navigateToHomePage()">
 
-      <ion-tab-button>
+      <ion-icon name="home" style="width: 22px; height: 22px; color:#275C3C"></ion-icon>
+      <!-- <ion-icon src="assets/bookmark.svg"></ion-icon> -->
+    </ion-tab-button>
 
-        <ion-icon name="apps" style="width: 22px; height: 22px;color: #275C3C"></ion-icon>
+    <ion-tab-button>
+      <!-- <ion-icon src="assets/Location.svg"></ion-icon> -->
+    </ion-tab-button>
 
-      </ion-tab-button>
+    <ion-tab-button (click)="navigateToSearchPage()">
+      <ion-icon style="width: 22px; height: 22px; color:#275C3C" name="search"></ion-icon>
+    </ion-tab-button>
 
-      <ion-tab-button (click)="navigateToHomePage()">
+    <ion-tab-button (click)="navigateToProfilePage()">
+      <ion-icon style="width: 22px; height: 22px; color:#275C3C" name="person-circle"></ion-icon>
+      <!-- <ion-icon style="color:#275C3C" src="assets/account_circle.svg"></ion-icon> -->
+    </ion-tab-button>
 
-        <ion-icon name="home" style="width: 22px; height: 22px; color:#275C3C"></ion-icon>
-        <!-- <ion-icon src="assets/bookmark.svg"></ion-icon> -->
-      </ion-tab-button>
+  </ion-tab-bar>
 
-      <ion-tab-button>
-        <!-- <ion-icon src="assets/Location.svg"></ion-icon> -->
-      </ion-tab-button>
-
-      <ion-tab-button (click)="navigateToSearchPage()">
-        <ion-icon style="width: 22px; height: 22px; color:#275C3C" name="search"></ion-icon>
-      </ion-tab-button>
-      
-      <ion-tab-button (click)="navigateToProfilePage()">
-        <ion-icon style="width: 22px; height: 22px; color:#275C3C" name="person-circle"></ion-icon>
-        <!-- <ion-icon style="color:#275C3C" src="assets/account_circle.svg"></ion-icon> -->
-      </ion-tab-button>
-
-    </ion-tab-bar>
-
-  </ion-tabs>
-
-<!-- </ion-footer> -->
+</ion-tabs>

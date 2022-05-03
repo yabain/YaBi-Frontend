@@ -17,7 +17,7 @@ export class MainscreenPage implements OnInit {
     this.route.navigate(['login']);
   }
 
-  laboutPage() {
+  aboutPage() {
     this.route.navigate(['about']);
   }
 
