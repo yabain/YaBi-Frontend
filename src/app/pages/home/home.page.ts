@@ -23,4 +23,7 @@ export class HomePage implements OnInit {
     this.route.navigate(['tabs/event-detail']);
   }
 
+  navigateToNotificationsPage() {
+    this.route.navigate(['tabs/notifications']);
+  }
 }

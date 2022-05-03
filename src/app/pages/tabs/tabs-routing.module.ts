@@ -40,7 +40,7 @@ const routes: Routes = [
         path: 'favoris', loadChildren: () => import('../favoris/favoris.module').then(m => m.FavorisPageModule)
       },
       {
-        path: 'notificcations', loadChildren: () => import('../notificcations/notificcations.module').then(m => m.NotificcationsPageModule)
+        path: 'notifications', loadChildren: () => import('../notifications/notifications.module').then(m => m.NotificationsPageModule)
       },
       {
         path: 'wallet', loadChildren: () => import('../wallet/wallet.module').then(m => m.WalletPageModule)

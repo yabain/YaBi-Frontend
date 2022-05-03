@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-notificcations',
-  templateUrl: './notificcations.page.html',
-  styleUrls: ['./notificcations.page.scss'],
+  selector: 'app-notifications',
+  templateUrl: './notifications.page.html',
+  styleUrls: ['./notifications.page.scss'],
 })
-export class NotificcationsPage implements OnInit {
+export class NotificationsPage implements OnInit {
   title = 'Notifications';
   constructor(private router: Router) { }
 

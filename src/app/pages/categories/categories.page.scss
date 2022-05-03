@@ -1,213 +1,204 @@
-
-
-ion-content{
-  --background:#fff !important; 
+.img-concert {
+   border-radius: 10px;
+   background: url('../../../assets/concert_bg.png');
+   height: auto;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
-.header-ios .main-toolbar{
-   --background:transparent !important;
-   --border-width:0 !important;
-   height:80px !important;
-   --min-height:125px !important;
-   margin: 0;
-
-
+.concert{
+   color: #ffffff;
+   text-shadow: 2px 4px 3px rgba(255, 253, 253, 0.741);
 }
 
-.center {
-   // display: block;
-   margin-left: 70px;
-   margin-right: auto;
-   color: black !important;
-   font-size: 1.25em !important;
- }
-
-.header-md .main-toolbar{
-   --background:transparent !important;
-   --border-width:0 !important;
-   height:80px !important;
-   --min-height:135px !important;
-   margin: 0;
-   font-size: 14px;
-
-
+.img-sport {
+   border-radius: 10px;
+   background: url('../../../assets/sport_bg.jpg');
+   height: auto;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.sport{
+   color: #275C3C;
+   text-shadow: 2px 4px 3px rgba(255, 255, 255, 0.946);
 }
 
-.header-md ion-title{
-   padding-inline-start: 0;
-   font-family: Montserrat_Regular;
-   font-weight: 200;
-   padding-left: 30px;
-   color:#E5E5E5;
-   font-size:12px;
+.img-conferences {
+   border-radius: 10px;
+   background: url('../../../assets/conference_bg.jpg');
+   height: auto;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.conferences{
+   color: #275C3C;
+   text-shadow: 2px 4px 3px rgba(255, 255, 255, 0.921);
 }
 
-ion-title{
-   padding-inline-start: 0;
-   font-family: Montserrat_Regular;
-   font-weight: 200;
-   padding-left: 30px;
-   color:#d4d4d4;
-   font-size:12px;
+.img-fiesta {
+   border-radius: 10px;
+   background: url('../../../assets/fiesta_bg.png');
+   height: auto;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.fiesta{
+   color: #ffffff;
+   text-shadow: 2px 4px 3px rgba(255, 253, 253, 0.741);
 }
 
-.small-toolbar{
-   --background-color: transparent;
-   text-align:right;
-   margin-right: 20px;
-}
 
-.small-toolbar .icon{
-   font-size: 26px;
-   color: grey;
-}
+ion-header {
 
-.header-md{
-   .title-toolbar{
-       text-align: left;
-       padding-left: 30px;
-       font-family: 'Montserrat';
-       font-weight: 200;
-       font-style: normal;
-   } 
+   ion-toolbar,
+   ion-item {
+      --background: #eef2ee;
+      background: #eef2ee;
+      padding: 0 10px;
+   }
 
-   .title-toolbar .title{
-       font-family: 'Libre Baskerville';
-       font-size: 18px;
-       font-weight: 700;
-       color: #3F9B99;
-   
+   ion-toolbar {
+      .bordered {
+         --border-radius: 10px;
+         --box-shadow: 5px 5px 10px #d1d1d1, -5px -5px 10px #FFFFFF;
+      }
+   }
+
+   ion-item {
+      h3 {
+         font-weight: 700;
+         font-size: 14px;
+      }
+
+      p {
+         font-weight: 500;
+         font-size: 14px;
+      }
+
+      ion-avatar {
+         --border-radius: 40%;
+      }
    }
 }
 
-.title-toolbar{
-   text-align: left;
-   padding-left: 30px;
-   font-family: 'Montserrat';
-   font-weight: 200;
-   font-style: normal;
-    position: absolute;
-    top: 6px;
-    color:#A79A9A
-}
+ion-content {
+   --background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #ffffff 100%);
 
-.title-toolbar .title{
-   font-family: LibreBaskerville;
-   font-size: 18px;
-   font-weight: 700;
-   color: #3F9B99 !important;
+   :root {
 
-}
+      /* Colores */
+      --text-color: #000000;
+      --gray-color: #828282;
+      --icon-color: #275C3C;
+      --container-color: #FBFCFF;
+
+      /* Typography */
+      --body-font: 'Poppins';
+   }
+
+   ion-card-title {
+      font-size: 3em;
+      font-family: 'Apple Chancery';
+      border: #eef2ee;
+   }
+   ion-card-subtitle{
+      font-family: 'Apple Chancery';
+   }
+   ion-card-content{
+      color: rgba(30, 29, 29, 0);
+      text-align: justify;
+   }
+
+   body,
+   html {
+      height: 100%;
+      margin: 0;
+      font-family: var(--body-font);
+      background-color: var(--container-color);
+   }
+
+   .bg img {
+      /* Full height */
+      height: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+   }
+
+   .container {
+      padding: 20px;
+   }
+
+   .img__profile {
+      display: grid;
+      position: relative;
+   }
+
+   .img__profile img {
+      width: 150px;
+      height: 150px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -100px;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 200px;
+      box-shadow: 0px 40px 40px rgba(16, 116, 41, 0.16);
+   }
+
+   .name {
+      font-size: 20px;
+      line-height: 54px;
+      text-align: center;
+      font-weight: 600;
+      font-style: normal;
+      color: var(--text-color);
+   }
+
+   .id {
+      font-size: 14px;
+      line-height: 26px;
+      font-weight: normal;
+      font-style: normal;
+      color: var(--gray-color);
+      text-align: center;
+      margin-top: -15px;
+   }
 
 
-//// styling up the content section //////////////////////////////////////////////////////////////////////////
-
-#container{
-
-   display:absolute;
-   left:0;
-   right: 0;
-   text-align:center;
-   transform: translateY(-50%);
-}
-
-////// Seaerch bar section//////
-
-.searchbar{
-   padding:0px;
-   position:absolute;
-   left:0;
-   right: 0;
-   top:20%;
-   margin-top: 20px;
-   padding-left: 20px;
-   padding-right: 20px;
-}
+   /* Item Section */
+   .item {
+      padding: 10px;
+      display: grid;
+      margin-top: 50px;
+      margin: 10px;
+      grid-template-columns: 15% 80% 10%;
+      color: var(--text-color);
+   }
 
 
-ion-searchbar{
-   --box-shadow:none;
-   --border-radius:15px;
-  color:#c0bfbf;
-   //--background: #e6e6e6;
-   --background:#f7f7f7;
-}
-.searchbar-input.sc-ion-searchbar-ios
-{
-   --background: rgb(190, 190, 190) !important;
-}
+   .item img {
+      width: 24px;
+   }
 
 
-///  main featured products section/////////////////////////////////////////////////
+   .item span {
+      font-style: normal;
+      font-weight: 550;
+      padding: 8px;
+      line-height: 16px;
+   }
 
-main-featured-products{
-   color:#000 !important;
-    height: 100px;
 
-    
-}
-ion-slides{
-   --bullet-background: white;
-   --bullet-background-active: yellow;
-}
+   /* Responsive layout */
+   @media screen and (max-width: 600px) {
 
-.card-wrapper{
-   background: #F2BC54 !important;   
-}
-
-.swiper-slide {
-   color:red;
-}
-
-.main-product-card{
-   background: #2E8B53;
-   border-radius: 20px;
-}
-
-.main-product-card img{
-   padding: 80px 0px 20px 0px;
-
-}
-
-ion-card-content {
-   text-align: left;
-}
-
-ion-card-title {
-   font-size: 14px;
-   font-family: Montserrat_Regular;
-   color: #fff;
-   font-weight: 200;
-}
-
-ion-card-subtitle {
-   font-size: 8px;
-   font-family: Montserrat_Regular;
-   font-weight: 200;
-   color: #cfcfcf;
-   padding-top: 10px;
-   // padding-bottom: 20px;
-}
-
-ion-item{
-   --background: transparent;
-   text-align: left;
-   margin-left: 0;
-   --padding-start:0px;
-   -webkit-padding-start: 0;
-   --min-height:0;
-   width: 60px !important;
-
-   ion-icon{
-       margin-top: 0;
-       margin-bottom: 0;
-       padding:0px;
-       font-size: 13px;
-       margin-inline: 0 2px;
+      .bg img {
+         width: 100%;
+         margin-top: 0;
+      }
    }
 }
-
-.time-icon{
-   padding-top: 6px;
-}
-
-
