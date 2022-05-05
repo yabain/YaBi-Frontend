@@ -34,7 +34,6 @@ export class TabsPage implements OnInit {
   {
     this.router.navigate(['tabs/billes']);
   }
-
   navigateToFavorisPage()
   {
     this.router.navigate(['tabs/favoris']);
@@ -58,5 +57,9 @@ export class TabsPage implements OnInit {
   navigateToAboutPage()
   {
     this.router.navigate(['tabs/about']);
+  }
+  navigateToAddEventPage()
+  {
+    this.router.navigate(['tabs/add-event']);
   }
 }

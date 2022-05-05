@@ -10,7 +10,12 @@ ion-header {
     // background-position: 50%;
     // flex-direction: column;
     // justify-content: center;
+    background-color: #d1d1d1 !important;
+    color: #000000;
   
+  }
+  span{
+    color: #000000 !important;
   }
 
   ion-toolbar,
@@ -63,7 +68,10 @@ ion-tab-bar{
     //     --background: transparent;
     // }
   } 
-
+ion-conten{
+  background-color: #eef2ee !important;
+  color: #000000;
+}
 
   //////// Middle Button styles ///////////////////////////
 

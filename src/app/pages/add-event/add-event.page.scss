@@ -1,53 +1,13 @@
-.img-concert {
+.img-add-event {
    border-radius: 10px;
-   background: url('../../../assets/concert_bg.png');
+   background: url('../../../assets/add-event.png');
    height: auto;
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
 }
-.concert{
-   color: #ffffff;
-   text-shadow: 2px 4px 3px rgba(255, 253, 253, 0.741);
-}
-
-.img-sport {
-   border-radius: 10px;
-   background: url('../../../assets/sport_bg.jpg');
-   height: auto;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-}
-.sport{
-   color: #275C3C;
-   text-shadow: 2px 4px 3px rgba(255, 255, 255, 0.946);
-}
-
-.img-conferences {
-   border-radius: 10px;
-   background: url('../../../assets/conference_bg.jpg');
-   height: auto;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-}
-.conferences{
-   color: #275C3C;
-   text-shadow: 2px 4px 3px rgba(255, 255, 255, 0.921);
-}
-
-.img-fiesta {
-   border-radius: 10px;
-   background: url('../../../assets/fiesta_bg.png');
-   height: auto;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-}
-.fiesta{
-   color: #ffffff;
-   text-shadow: 2px 4px 3px rgba(255, 253, 253, 0.741);
+.add-event{
+   color: #275c3c00;
 }
 
 .bordered {
@@ -55,31 +15,6 @@
    --box-shadow: 5px 5px 10px #d1d1d1, -5px -5px 10px #FFFFFF;
 }
 
-ion-header {
-
-   ion-toolbar,
-   ion-item {
-      --background: #eef2ee;
-      background: #eef2ee;
-      padding: 0 10px;
-   }
-
-   ion-item {
-      h3 {
-         font-weight: 700;
-         font-size: 14px;
-      }
-
-      p {
-         font-weight: 500;
-         font-size: 14px;
-      }
-
-      ion-avatar {
-         --border-radius: 40%;
-      }
-   }
-}
 
 ion-content {
    --background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #ffffff 100%);
@@ -96,10 +31,44 @@ ion-content {
       --body-font: 'Poppins';
    }
 
+   input{
+      border-radius: 5px;
+      border:  1px solid #275C3C;
+      font-weight: 300;
+      color:#161717;
+      --padding-start:30px;
+   }
+   input[type='radio']:after {
+       accent-color:  1px solid #275C3C !important;
+       width: 15px;
+       height: 15px;
+       border-radius: 15px;
+       top: -2px;
+       left: -1px;
+       position: relative;
+      //  background-color: #275C3C;
+       content: '';
+       display: inline-block;
+       visibility: visible;
+       border: 1px solid #275C3C !important;
+   }
+   select {
+      //  width: 15px;
+      //  height: 15px;
+       border-radius: 5px;
+       top: -2px;
+       left: -1px;
+       position: relative;
+      //  background-color: #275C3C;
+       content: '';
+       display: inline-block;
+       visibility: visible;
+       border: 1px solid #275C3C !important;
+   }
    ion-card-title {
       font-size: 3em;
       font-family: 'Apple Chancery';
-      border: #eef2ee;
+      border: #eef2ee00;
    }
    ion-card-subtitle{
       font-family: 'Apple Chancery';

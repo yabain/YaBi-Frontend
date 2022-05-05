@@ -37,9 +37,22 @@
               },
               {
                 "input": "src/global.scss"
+              },
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              },
+              {
+                "input": "node_modules/bootstrap-switch-button/css/bootstrap-switch-button.min.css"
               }
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              },
+              {
+                "input": "node_modules/bootstrap-switch-button/dist/bootstrap-switch-button.min.js"
+              }
+            ]
           },
           "configurations": {
             "production": {

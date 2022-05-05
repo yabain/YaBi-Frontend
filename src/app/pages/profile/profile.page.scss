@@ -8,6 +8,7 @@
   padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
+
 ion-header {
 
   ion-toolbar,
@@ -43,8 +44,9 @@ ion-header {
 
 ion-content {
   --background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #ffffff 100%);
+
   :root {
-    
+
     /* Colores */
     --text-color: #000000;
     --gray-color: #828282;
@@ -53,33 +55,38 @@ ion-content {
 
     /* Typography */
     --body-font: 'Poppins';
-}
+  }
 
-body, html {
+  span, i {
+    color: black;
+  }
+
+  body,
+  html {
     height: 100%;
     margin: 0;
     font-family: var(--body-font);
     background-color: var(--container-color);
-}
+  }
 
-.bg img {
+  .bg img {
     /* Full height */
     height: auto;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+  }
 
-.container {
+  .container {
     padding: 20px;
-}
+  }
 
-.img__profile {
+  .img__profile {
     display: grid;
     position: relative;
-}
+  }
 
-.img__profile img {
+  .img__profile img {
     width: 150px;
     height: 150px;
     margin-left: auto;
@@ -89,78 +96,78 @@ body, html {
     overflow: hidden;
     border-radius: 200px;
     box-shadow: 0px 40px 40px rgba(16, 116, 41, 0.16);
-}
+  }
 
-.name {
+  .name {
     font-size: 20px;
     line-height: 54px;
     text-align: center;
     font-weight: 600;
     font-style: normal;
     color: var(--text-color);
-}
+  }
 
-.id {
+  .id {
     font-size: 14px;
     line-height: 26px;
     font-weight: normal;
     font-style: normal;
-    color: var(--gray-color);
+    color: #000000;
     text-align: center;
     margin-top: -15px;
-}
+  }
 
 
-/* Item Section */
-.item {
+  /* Item Section */
+  .item {
     padding: 10px;
     display: grid;
     margin-top: 50px;
     margin: 10px;
     grid-template-columns: 15% 80% 10%;
     color: var(--text-color);
-}
+  }
 
 
-.item img {
+  .item img {
     width: 24px;
-}
+  }
 
 
-.item span {
+  .item span {
     font-style: normal;
     font-weight: 550;
     padding: 8px;
     line-height: 16px;
-}
+  }
 
-.item__logout {
+  .item__logout {
     padding: 10px;
     display: grid;
     margin-top: 3rem !important;
     margin: 10px;
     grid-template-columns: 15% 80% 10%;
     color: var(--text-color);
-}
+  }
 
-.item__logout img{
+  .item__logout img {
     width: 24px;
-}
+  }
 
-.item__logout span {
+  .item__logout span {
     font-style: normal;
     font-weight: 550;
     padding: 8px;
     line-height: 16px;
 
-}
+  }
 
-/* Responsive layout */
-@media screen and (max-width: 600px) {
+  /* Responsive layout */
+  @media screen and (max-width: 600px) {
 
     .bg img {
-        width: 100%;
-        margin-top: 0;
+      width: 100%;
+      margin-top: 0;
     }
-}
+  }
 }

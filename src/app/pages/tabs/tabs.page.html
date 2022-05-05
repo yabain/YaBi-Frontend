@@ -1,57 +1,57 @@
 <ion-router-outlet style="background-color: white;"></ion-router-outlet>
 
-<ion-menu side="start" menuId="first" contentId="main">
+<ion-menu side="start" menuId="first" contentId="main" style="background-color: white !important;">
   <ion-header>
-    <ion-toolbar class="background-menu" style="padding-top: 30px;">
+    <ion-toolbar style="padding-top: 30px;">
       <ion-title>YaBi</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content style="background-color: white;">
+  <ion-content class="background-menu" style="background-color: white !important;">
     <div class="item" (click)="navigateToCategoriesPage()">
       <i class="fa fa-calendar-o" style="font-size: 25px"></i>
-        <span>Catégories</span>
-        <div class="icon">
-          <img src="../../../assets/chevron-right.png" alt="profile">
-        </div>
+      <span>Catégories</span>
+      <div class="icon">
+        <img src="../../../assets/chevron-right.png" alt="profile">
+      </div>
     </div>
     <div class="item" (click)="navigateToBillesPage()">
       <i class="fa fa-barcode" style="font-size: 25px"></i>
-        <span>Mes billets</span>
-        <div class="icon">
-          <img src="../../../assets/chevron-right.png" alt="profile">
-        </div>
+      <span>Mes billets</span>
+      <div class="icon">
+        <img src="../../../assets/chevron-right.png" alt="profile">
+      </div>
     </div>
     <div class="item" (click)="navigateToFavorisPage()">
       <i class="fa fa-bookmark-o" style="font-size: 25px"></i>
-        <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
-        <span>Mes favoris</span>
-        <div class="icon">
-          <img src="../../../assets/chevron-right.png" alt="profile">
-        </div>
+      <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+      <span>Mes favoris</span>
+      <div class="icon">
+        <img src="../../../assets/chevron-right.png" alt="profile">
+      </div>
     </div>
     <div class="item" (click)="navigateToInvitationsPage()">
       <i class="fa fa-folder-open-o" style="font-size: 25px"></i>
-        <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
-        <span>Mes invitations</span>
-        <div class="icon">
-          <img src="../../../assets/chevron-right.png" alt="profile">
-        </div>
+      <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+      <span>Mes invitations</span>
+      <div class="icon">
+        <img src="../../../assets/chevron-right.png" alt="profile">
+      </div>
     </div>
     <div class="item" (click)="navigateToWalletPage()">
       <i class="fas fa-wallet" style="font-size: 25px"></i>
-        <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
-        <span>YaBi wallet</span>
-        <div class="icon">
-          <img src="../../../assets/chevron-right.png" alt="profile">
-        </div>
+      <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+      <span>YaBi wallet</span>
+      <div class="icon">
+        <img src="../../../assets/chevron-right.png" alt="profile">
+      </div>
     </div>
     <div class="item" (click)="navigateToHistoryPage()">
       <i class="fa fa-history" style="font-size: 25px"></i>
-        <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
-        <span>Mon historique</span>
-        <div class="icon">
-          <img src="../../../assets/chevron-right.png" alt="profile">
-        </div>
+      <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+      <span>Mon historique</span>
+      <div class="icon">
+        <img src="../../../assets/chevron-right.png" alt="profile">
+      </div>
     </div>
     <div class="item">
     </div>
@@ -61,10 +61,10 @@
     </div>
     <div class="item">
     </div>
-    <div class="item">
+    <div class="item" (click)="navigateToAboutPage()">
       <i class="fa fa-info-circle" style="font-size: 25px"></i>
-        <span>A propos</span>
-        <!-- <div class="icon">
+      <span>A propos</span>
+      <!-- <div class="icon">
           <img src="../../../assets/chevron-right.png" alt="profile">
         </div> -->
     </div>
@@ -74,7 +74,7 @@
   </ion-content>
 </ion-menu>
 
-<div class="middle-button-container">
+<div class="middle-button-container" (click)="navigateToAddEventPage()">
   <p style="text-align:center;">
     <ion-fab style="margin-top: -75px; margin-left: -30px;">
       <ion-fab-button style="--background:#FFFFFF" size="small">
@@ -88,15 +88,13 @@
 
   <ion-tab-bar slot="bottom" style="background: #eef2ee; !important;">
 
-        <ion-tab-button style="background: #eef2ee; !important;">
-          <div id="main" style="background: #eef2ee; !important;">
-            <ion-menu-toggle style="background: #eef2ee; !important;">
-
+    <ion-tab-button style="background: #eef2ee; !important;">
+      <div id="main" style="background: #eef2ee; !important;">
+        <ion-menu-toggle style="background: #eef2ee; !important;">
           <ion-icon name="apps" style="width: 22px; height: 22px;color: #275C3C"></ion-icon>
         </ion-menu-toggle>
       </div>
-
-        </ion-tab-button>
+    </ion-tab-button>
 
     <ion-tab-button (click)="navigateToHomePage()">
 

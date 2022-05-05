@@ -52,6 +52,12 @@ const routes: Routes = [
         path: 'invitations', loadChildren: () => import('../invitations/invitations.module').then(m => m.InvitationsPageModule)
       },
       {
+        path: 'about', loadChildren: () => import('../../about/about.module').then(m => m.AboutPageModule)
+      },
+      {
+        path: 'add-event', loadChildren: () => import('../add-event/add-event.module').then(m => m.AddEventPageModule)
+      },
+      {
         path: '**',
         redirectTo: 'home',
         pathMatch: 'full'
