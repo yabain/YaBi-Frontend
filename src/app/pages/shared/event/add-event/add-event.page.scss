@@ -1,6 +1,6 @@
 .img-add-event {
    border-radius: 10px;
-   background: url('../../../assets/add-event.png');
+   background: url('../../../../../assets/add-event.png');
    height: auto;
    background-position: center;
    background-repeat: no-repeat;
@@ -16,6 +16,9 @@
 }
 
 
+label{
+   color: black;
+}
 ion-content {
    --background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #ffffff 100%);
 
@@ -33,7 +36,7 @@ ion-content {
 
    input{
       border-radius: 5px;
-      border:  1px solid #275C3C;
+      border:  1px solid #275c3c82;
       font-weight: 300;
       color:#161717;
       --padding-start:30px;

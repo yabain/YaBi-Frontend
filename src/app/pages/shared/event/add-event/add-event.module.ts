@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AddEventPageRoutingModule } from './add-event-routing.module';
 
 import { AddEventPage } from './add-event.page';
-import { TitleComponent } from '../shared/title/title.component';
+import { TitleComponent } from '../../title/title.component';
 
 @NgModule({
   imports: [

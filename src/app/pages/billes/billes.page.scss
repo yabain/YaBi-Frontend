@@ -1,103 +1,76 @@
 
-ion-content{
-  --background:#fff !important; 
-}
-.header-ios .main-toolbar{
-   --background:transparent !important;
-   --border-width:0 !important;
-   height:80px !important;
-   --min-height:125px !important;
-   margin: 0;
+ion-content {
+   --background: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, #ffffff 100%);
+ 
+   .slides {
+     background: #eef2ee;
+     padding: 2px 3px 5px 3px;
+     border-radius: 0 0 10px 10px;
+   }
+   .container {
+     padding: 2px 3px;
+     color: rgba(6, 6, 6, 0.892);
+ 
+     h2 {
+       padding-top: 0px;
+       padding-bottom: 0px;
+     }
+ 
+   }
+ 
+ }
+ .prestige{
+   border-radius: 15px !important;
+   border-style: solid;
+   border-color: #275c3c2a !important;
+   --background: linear-gradient(90deg, #ffffff 0%, #fff 50%, #fff 100%);
+ }
+ .vip{
+  border-radius: 15px !important;
+  border-style: solid;
+  border-color: #275c3c2a !important;
+  --background: linear-gradient(90deg, #ffffff 0%, #fff 50%, #fff 100%);
+ }
+ .classic{
+  border-radius: 15px !important;
+  border-style: solid;
+  border-color: #275c3c2a !important;
+  --background: linear-gradient(90deg, #ffffff 0%, #fff 50%, #fff 100%);
+ }
+ ion-item {
+   // --background: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, #d6ecb9 100%);
+   padding: 0;
+   margin: 2px 0;
+   --border: 5px !important;
+   --border-color: #000 !important;
+   --border-radius: 10px !important;
 
+   color: #1f1f1f;
+   font-weight: 600;
 
-}
+   ion-label {
+     padding: 3px 0;
 
-.center {
-   // display: block;
-   margin-left: 65px;
-   margin-right: auto;
-   color: black !important;
-   font-size: 1.25em !important;
+     h4 {
+       font-weight: 600;
+       font-size: 16px;
+       color: rgba(6, 6, 6, 0.892);
+     }
+
+     h6 {
+       color: rgba(6, 6, 6, 0.892);
+     }
+   }
+
  }
 
-.header-md .main-toolbar{
-   --background:transparent !important;
-   --border-width:0 !important;
-   height:80px !important;
-   --min-height:135px !important;
-   margin: 0;
-   font-size: 14px;
 
-
+ ion-grid{
+   background-color: inherit;
+   color: black;
+   margin: 0px;
+   padding: 0px;
 }
-
-.header-md ion-title{
-   padding-inline-start: 0;
-   font-family: Montserrat_Regular;
-   font-weight: 200;
-   padding-left: 30px;
-   color:#E5E5E5;
-   font-size:12px;
-}
-
-ion-title{
-   padding-inline-start: 0;
-   font-family: Montserrat_Regular;
-   font-weight: 200;
-   padding-left: 30px;
-   color:#d4d4d4;
-   font-size:12px;
-}
-
-.small-toolbar{
-   --background-color: transparent;
-   text-align:right;
-   margin-right: 20px;
-}
-
-.small-toolbar .icon{
-   font-size: 26px;
-   color: grey;
-}
-
-.header-md{
-   .title-toolbar{
-       text-align: left;
-       padding-left: 30px;
-       font-family: 'Montserrat';
-       font-weight: 200;
-       font-style: normal;
-   } 
-
-   .title-toolbar .title{
-       font-family: 'Libre Baskerville';
-       font-size: 18px;
-       font-weight: 700;
-       color: #3F9B99;
-   
-   }
-}
-
-.title-toolbar{
-   text-align: left;
-   padding-left: 30px;
-   font-family: 'Montserrat';
-   font-weight: 200;
-   font-style: normal;
-    position: absolute;
-    top: 6px;
-    color:#A79A9A
-}
-
-.title-toolbar .title{
-   font-family: LibreBaskerville;
-   font-size: 18px;
-   font-weight: 700;
-   color: #3F9B99 !important;
-
-}
-
-
 //// styling up the content section //////////////////////////////////////////////////////////////////////////
 
 #container{
@@ -134,79 +107,4 @@ ion-searchbar{
 {
    --background: rgb(190, 190, 190) !important;
 }
-
-
-///  main featured products section/////////////////////////////////////////////////
-
-main-featured-products{
-   color:#000 !important;
-    height: 100px;
-
-    
-}
-ion-slides{
-   --bullet-background: white;
-   --bullet-background-active: yellow;
-}
-
-.card-wrapper{
-   background: #F2BC54 !important;   
-}
-
-.swiper-slide {
-   color:red;
-}
-
-.main-product-card{
-   background: #2E8B53;
-   border-radius: 20px;
-}
-
-.main-product-card img{
-   padding: 80px 0px 20px 0px;
-
-}
-
-ion-card-content {
-   text-align: left;
-}
-
-ion-card-title {
-   font-size: 14px;
-   font-family: Montserrat_Regular;
-   color: #fff;
-   font-weight: 200;
-}
-
-ion-card-subtitle {
-   font-size: 8px;
-   font-family: Montserrat_Regular;
-   font-weight: 200;
-   color: #cfcfcf;
-   padding-top: 10px;
-   // padding-bottom: 20px;
-}
-
-ion-item{
-   --background: transparent;
-   text-align: left;
-   margin-left: 0;
-   --padding-start:0px;
-   -webkit-padding-start: 0;
-   --min-height:0;
-   width: 60px !important;
-
-   ion-icon{
-       margin-top: 0;
-       margin-bottom: 0;
-       padding:0px;
-       font-size: 13px;
-       margin-inline: 0 2px;
-   }
-}
-
-.time-icon{
-   padding-top: 6px;
-}
-
 

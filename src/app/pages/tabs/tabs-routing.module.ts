@@ -28,7 +28,7 @@ const routes: Routes = [
         path: 'profile', loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
-        path: 'event-detail', loadChildren: () => import('../event-detail/event-detail.module').then(m => m.EventDetailModule)
+        path: 'event-detail', loadChildren: () => import('../shared/event/event-detail/event-detail.module').then(m => m.EventDetailModule)
       },
       {
         path: 'categories', loadChildren: () => import('../categories/categories.module').then(m => m.CategoriesPageModule)
@@ -55,7 +55,7 @@ const routes: Routes = [
         path: 'about', loadChildren: () => import('../../about/about.module').then(m => m.AboutPageModule)
       },
       {
-        path: 'add-event', loadChildren: () => import('../add-event/add-event.module').then(m => m.AddEventPageModule)
+        path: 'add-event', loadChildren: () => import('../shared/event/add-event/add-event.module').then(m => m.AddEventPageModule)
       },
       {
         path: '**',
