@@ -1,76 +1,78 @@
 <ion-router-outlet style="background-color: white;"></ion-router-outlet>
 
-<ion-menu side="start" menuId="first" contentId="main" style="background-color: white !important;">
+<ion-menu side="start" menuId="first" contentId="main">
   <ion-header>
     <ion-toolbar style="padding-top: 30px;">
-      <ion-title>YaBi</ion-title>
+      <img src="../../../assets/yabi_logo.png" style="height: 70%; width: 60%;">
     </ion-toolbar>
   </ion-header>
-  <ion-content class="background-menu" style="background-color: white !important;">
-    <div class="item" (click)="navigateToCategoriesPage()">
-      <i class="fa fa-calendar-o" style="font-size: 25px"></i>
-      <span>Catégories</span>
-      <div class="icon">
-        <img src="../../../assets/chevron-right.png" alt="profile">
+  <ion-content class="background-menu" style="--background-color: white !important;">
+    <div style="background-color: white; color: #275C3C">
+      <div class="item" (click)="navigateToCategoriesPage()">
+        <i class="fa fa-calendar-o" style="font-size: 25px"></i>
+        <span>Catégories</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
       </div>
-    </div>
-    <div class="item" (click)="navigateToBillesPage()">
-      <i class="fa fa-barcode" style="font-size: 25px"></i>
-      <span>Mes billets</span>
-      <div class="icon">
-        <img src="../../../assets/chevron-right.png" alt="profile">
+      <div class="item" (click)="navigateToBillesPage()">
+        <i class="fa fa-barcode" style="font-size: 25px"></i>
+        <span>Mes billets</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
       </div>
-    </div>
-    <div class="item" (click)="navigateToFavorisPage()">
-      <i class="fa fa-bookmark-o" style="font-size: 25px"></i>
-      <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
-      <span>Mes favoris</span>
-      <div class="icon">
-        <img src="../../../assets/chevron-right.png" alt="profile">
+      <div class="item" (click)="navigateToFavorisPage()">
+        <i class="fa fa-bookmark-o" style="font-size: 25px"></i>
+        <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+        <span>Mes favoris</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
       </div>
-    </div>
-    <div class="item" (click)="navigateToInvitationsPage()">
-      <i class="fa fa-folder-open-o" style="font-size: 25px"></i>
-      <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
-      <span>Mes invitations</span>
-      <div class="icon">
-        <img src="../../../assets/chevron-right.png" alt="profile">
+      <div class="item" (click)="navigateToInvitationsPage()">
+        <i class="fa fa-folder-open-o" style="font-size: 25px"></i>
+        <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+        <span>Mes invitations</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
       </div>
-    </div>
-    <div class="item" (click)="navigateToWalletPage()">
-      <i class="fas fa-wallet" style="font-size: 25px"></i>
-      <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
-      <span>YaBi wallet</span>
-      <div class="icon">
-        <img src="../../../assets/chevron-right.png" alt="profile">
+      <div class="item" (click)="navigateToWalletPage()">
+        <i class="fas fa-wallet" style="font-size: 25px"></i>
+        <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+        <span>YaBi wallet</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
       </div>
-    </div>
-    <div class="item" (click)="navigateToHistoryPage()">
-      <i class="fa fa-history" style="font-size: 25px"></i>
-      <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
-      <span>Mon historique</span>
-      <div class="icon">
-        <img src="../../../assets/chevron-right.png" alt="profile">
+      <div class="item" (click)="navigateToHistoryPage()">
+        <i class="fa fa-history" style="font-size: 25px"></i>
+        <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+        <span>Mon historique</span>
+        <div class="icon">
+          <img src="../../../assets/chevron-right.png" alt="profile">
+        </div>
       </div>
-    </div>
-    <div class="item">
-    </div>
-    <div class="item">
-    </div>
-    <div class="item">
-    </div>
-    <div class="item">
-    </div>
-    <div class="item" (click)="navigateToAboutPage()">
-      <i class="fa fa-info-circle" style="font-size: 25px"></i>
-      <span>A propos</span>
-      <!-- <div class="icon">
+      <div class="item">
+      </div>
+      <div class="item">
+      </div>
+      <div class="item">
+      </div>
+      <div class="item">
+      </div>
+      <div class="item" (click)="navigateToAboutPage()">
+        <i class="fa fa-info-circle" style="font-size: 25px"></i>
+        <span>A propos</span>
+        <!-- <div class="icon">
           <img src="../../../assets/chevron-right.png" alt="profile">
         </div> -->
-    </div>
-    <!-- <ion-list>
+      </div>
+      <!-- <ion-list>
       <ion-item>Menu Item</ion-item>
     </ion-list> -->
+    </div>
   </ion-content>
 </ion-menu>
 

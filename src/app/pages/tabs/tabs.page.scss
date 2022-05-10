@@ -1,19 +1,19 @@
 ion-header {
 
-  .background-menu{
+  // .background-menu{
     // height: 100%;
     // width: 100%;
-    // display: flex;
-    // background: url('../../../assets/bg_img.jpg');
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background-position: 50%;
-    // flex-direction: column;
+    display: flex;
+    background: url('../../../assets/bg_img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    flex-direction: column;
     // justify-content: center;
     background-color: #d1d1d1 !important;
     color: #000000;
   
-  }
+  // }
   span{
     color: #000000 !important;
   }
@@ -54,11 +54,11 @@ ion-tab-bar{
     //  --background:#F4FAF6;
      --ion-color-base: transparent !important;
     //  --background: transparent;
-    --color-selected: #137574 !important;
+    --color-selected: #5f8f5f !important;
       // opacity:0.5;
       ion-tab-button{
         --background:#eef2ee;
-        --color-selected: #137c7a !important;
+        --color-selected: #449d44 !important;
   
     }
     position: absolute;
@@ -72,7 +72,9 @@ ion-conten{
   background-color: #eef2ee !important;
   color: #000000;
 }
-
+ion-title{
+  color: #275C3C;
+}
   //////// Middle Button styles ///////////////////////////
 
   .middle-button-container{
