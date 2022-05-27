@@ -22,23 +22,29 @@ ion-content {
  .prestige{
    border-radius: 15px !important;
    border-style: solid;
-   border-color: #275c3c2a !important;
-   --background: linear-gradient(90deg, #ffffff 0%, #fff 50%, #fff 100%);
+   border-color: #cda75552 !important;
+  //  --background: linear-gradient(90deg, #ffffff 0%, #fff 50%, #fff 100%);
  }
  .vip{
   border-radius: 15px !important;
   border-style: solid;
-  border-color: #275c3c2a !important;
-  --background: linear-gradient(90deg, #ffffff 0%, #fff 50%, #fff 100%);
+  border-color: #407dde57 !important;
+  --background: linear-gradient(90deg, #ffffff 0%, #fff 50%, #ebefe598 100%);
  }
  .classic{
   border-radius: 15px !important;
   border-style: solid;
   border-color: #275c3c2a !important;
-  --background: linear-gradient(90deg, #ffffff 0%, #fff 50%, #fff 100%);
+  // --background: linear-gradient(90deg, #ffffff 0%, #fff 50%, #fff 100%);
+ }
+ .uniform{
+  border-radius: 15px !important;
+  border-style: solid;
+  border-color: #275c3c2a !important;
+  // --background: linear-gradient(90deg, #ffffff 0%, #fff 50%, #fff 100%);
  }
  ion-item {
-   // --background: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, #d6ecb9 100%);
+   --background: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, #ebefe598 100%);
    padding: 0;
    margin: 2px 0;
    --border: 5px !important;

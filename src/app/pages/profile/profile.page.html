@@ -18,43 +18,43 @@
             <span>{{userName}}</span>
             <div class="icon"
                 (click)="openModal('Nom complet', 'userName', 'Rassurez-vous que le nom renseigné soit correct.')">
-                <i class='fa fa-pencil-square-o'></i>
+                <img src="../../../assets/icon/icon_edit.png">
             </div>
         </div>
         <div class="item">
-            <i class="fa fa-flag-o" style="font-size: 30px"></i>
-            <!-- <img src="../../../assets/Wallet.png" alt="Wallet.png"> -->
+            <img src="../../../assets/icon/icon_flag.png" style="height: 35px; width: 35px !important" alt="country">
+            <!-- <img src="../../../assets/Wallet.png" alt="Wallet"> -->
             <span>{{country}}</span>
             <div class="icon"
                 (click)="openModal('Pays', 'country', 'Rassurez-vous que le pays renseigné soit correct.')">
-                <i class='fa fa-pencil-square-o'></i>
+                <img src="../../../assets/icon/icon_edit.png">
             </div>
         </div>
         <div class="item">
-            <img src="../../../assets/map-pin.png" alt="map-pin.png">
+            <img src="../../../assets/map-pin.png" alt="map-pin">
             <span>{{city}}</span>
             <div class="icon" (click)="openModal('Ville', 'city', 'Rassurez-vous que la renseignée soit correct.')">
-                <i class='fa fa-pencil-square-o'></i>
+                <img src="../../../assets/icon/icon_edit.png">
             </div>
         </div>
         <div class="item">
-            <i class="fa fa-mobile-phone" style="font-size: 35px"></i>
+            <img src="../../../assets/icon/icon_phone.png" style="height: 35px; width: 40px !important" alt="phone">
             <span>{{phone}}</span>
             <div class="icon"
                 (click)="openModal('Numéro de téléphone', 'phone', 'Rassurez-vous que le numéro de téléphone que vous renseignez soit correct.')">
-                <i class='fa fa-pencil-square-o'></i>
+                <img src="../../../assets/icon/icon_edit.png">
             </div>
         </div>
         <div class="item">
-            <i class="fa fa-envelope-o" style="font-size: 30px"></i>
+            <img src="../../../assets/icon/icon_envelop.png" style="height: 25px; width: 40px !important" alt="envelope">
             <span>{{email}}</span>
             <div class="icon"
                 (click)="openModal('Email', 'email', 'Rassurez-vous que cet email renseigné soit correct.')">
-                <i class='fa fa-pencil-square-o'></i>
+                <img src="../../../assets/icon/icon_edit.png">
             </div>
         </div>
         <div class="item">
-            <i class="fa fa-lock" style="font-size: 30px"></i>
+            <img src="../../../assets/icon/icon_locker.png" style="height: 30px; width: 40px !important" alt="locker">
             <span>
                 <i class="fa fa-dot-circle" style="font-size: 15px"></i>
                 <i class="fa fa-dot-circle" style="font-size: 15px"></i>
@@ -67,7 +67,7 @@
                 <i class="fa fa-dot-circle" style="font-size: 15px"></i>
             </span>
             <div class="icon">
-                <!-- <i class='fa fa-pencil-square-o' (click)="openModal('Mot de passe', '********', 'Rassurez-vous que votre ancien mot de passe renseigné soit correct. Si vous avez oublié votre mot de passe, vous recevrez un email pour le réinitialiser.')"></i> -->
+                <img src="../../../assets/icon/icon_edit.png" (click)="openModal('Mot de passe', '********', 'Rassurez-vous que votre ancien mot de passe renseigné soit correct. Si vous avez oublié votre mot de passe, vous recevrez un email pour le réinitialiser.')">
             </div>
         </div>
         <div class="item__logout" (click)="navigateToLoginPage()">
@@ -79,5 +79,4 @@
         </div>
     </div>
     <br><br><br>
-
 </ion-content>

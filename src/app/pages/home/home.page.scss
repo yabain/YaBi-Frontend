@@ -1,5 +1,4 @@
-
-.addit{
+.addit {
   width: 100%;
   border-radius: 10px;
   height: 150px;
@@ -9,6 +8,7 @@
   padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
+
 ion-header {
 
   ion-toolbar,
@@ -43,14 +43,16 @@ ion-header {
 }
 
 ion-content {
-  --background: linear-gradient(90deg, #2d7b4c 0%, #25653e 50%, #275C3C 100%);
+  --background: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, #ffffff 100%);
+  // --background: linear-gradient(90deg, #2d7b4c 0%, #25653e 50%, #275C3C 100%);
 
   .slides {
     background: #eef2ee;
     padding: 2px 3px 5px 3px;
     border-radius: 0 0 10px 10px;
   }
-  ion-slide{
+
+  ion-slide {
     padding-right: 0 !important;
     padding-left: 0px !important;
     margin-right: 0px !important;
@@ -95,10 +97,14 @@ ion-content {
     color: rgba(6, 6, 6, 0.892);
 
     ion-item {
-      --background: rgb(255, 255, 255);
+      border-radius: 15px !important;
+      border-style: solid;
+      border-color: #cee9cd77 !important;
+      --background: linear-gradient(90deg, #ffffff 0%, #fff 50%, #ebefe598 100%);
+      // --background: rgb(255, 255, 255);
       padding: 0;
       margin: 2px 0;
-      --border-radius: 5px;
+      // --border-radius: 5px;
       color: #1f1f1f;
       font-weight: 600;
 

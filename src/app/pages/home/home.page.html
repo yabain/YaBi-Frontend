@@ -14,7 +14,7 @@
 
     <ion-buttons slot="end"><br>
       <ion-button (click)="navigateToNotificationsPage()" class="bordered" fill="solid" color="#275C3C" style="color: #275C3C">
-        <ion-icon color="custom" name="notifications" style="color: aliceblue;"></ion-icon>
+        <img src="../../../assets/icon/icon_bell.png">
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -23,16 +23,16 @@
 <ion-content style="padding-top: 0px; margin-top: 0px;">
   <div class="slides ion-margin-bottom" style="padding-top: 0px;">
 
-    <p style="color: black; margin-left: 15px;margin-top: 0px; padding-bottom: 0px;padding-top: 3px; margin-bottom: 0px; font-family: Georgia, serif !important;"><b> A la une</b></p>
+    <p style="color: #275C3C; margin-left: 15px;margin-top: 0px; padding-bottom: 0px;padding-top: 3px; margin-bottom: 0px; font-family: Georgia, serif !important;"><b> A la une</b></p>
     <ion-slides [options]="slidesOptions">
-      <ion-slide>
+      <ion-slide class="bordered">
         <ion-card style="background-color: white !important;" (click)="eventPage()">
           <ion-card-header class="addit">
             <div>
               <div class="main">
                 <img src="../../../assets/fecefoot.png">
               </div>
-            </div>
+            </div> 
           </ion-card-header>
           <ion-card-content class="ion-text-left">
             <h4><b>Match de gala: Canon Vs Toner</b></h4>
@@ -151,7 +151,7 @@
 
 
   <div class="container" style="margin-top: 0px; padding-top: 0px;">
-    <h3 style="color: aliceblue; font-family: Georgia, serif !important; margin-left: 10px; font-size: 1em"><b> Évènements </b></h3>
+    <h3 style="color: #275C3C; font-family: Georgia, serif !important; margin-left: 10px; font-size: 1em"><b> Événements </b></h3>
     <ion-item lines="none">
       <ion-grid>
         <ion-row class="ion-align-items-center">
