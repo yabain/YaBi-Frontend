@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MustMatch } from '../shared/services/MustMatch';
+import { LocationService } from '../shared/services/location/location.service';
+// import { MustMatch } from '../shared/services/MustMatch';
 
 @Component({
   selector: 'app-signup',
@@ -13,12 +14,17 @@ export class SignupPage implements OnInit {
   registerForm: FormGroup;
   registrationMessage: String = '';
   waitingRegistration = false;
+  country: any = [];
+  city: any = [];
 
   constructor(
     private router: Router,
-    private formBuilder: FormBuilder,) { }
+    private formBuilder: FormBuilder,
+    private location: LocationService
+    ) { }
 
   ngOnInit(): void {
+    this.country = this.location.country();
     this.registerForm = this.formBuilder.group({
       'firstName': new FormControl('', [Validators.required]),
       'user_agree': new FormControl(false, [Validators.requiredTrue]),
@@ -35,6 +41,11 @@ export class SignupPage implements OnInit {
     //   validator: MustMatch('password', 'password2')
     // }
     );
+  }
+  onSelect(country){
+    this.city = this.location.city()
+    .filter(e =>
+     e.id == country.target.value);
   }
 
   get f() {

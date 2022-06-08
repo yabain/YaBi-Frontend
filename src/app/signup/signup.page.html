@@ -51,7 +51,7 @@
               </div>
             </ion-item>
             <ion-item>
-              <ion-input type="password" id="password" placeholder="Mot de passe" formControlName="lastName"
+              <ion-input type="password" id="password" placeholder="Mot de passe" formControlName="password"
                 [ngClass]="{ 'is-invalid': submitted && f.password.errors }"></ion-input><br>
               <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-danger">
                 <div *ngIf="f.password.errors.required"> 👈🏾</div>
@@ -66,44 +66,29 @@
             </ion-item> -->
             <ion-item>
               <label for="country" style="color: black; margin-left: 20px; margin-right: auto;">Pays : </label>
-              <select id="country" formControlName="country" class="col-md-12"
-                  [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
-                  <option selected>Cameroun</option>
+              <select (change)="onSelect($event)" id="country" formControlName="country"
+                [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+                <option></option>
+                <option *ngFor="let 
+                    countries of country" value="{{countries.id}}">
+                  {{countries.name}}
+                </option>
               </select>
               <div *ngIf="submitted && f.country.errors" class="invalid-feedback text-danger">
-                  <div *ngIf="f.country.errors.required"> 👈🏾</div>
+                <div *ngIf="f.country.errors.required"> 👈🏾</div>
               </div>
             </ion-item>
             <ion-item>
               <label for="city" style="color: black; margin-left: 20px; margin-right: auto;">Ville : </label>
-              <select id="city" formControlName="city" class="col-md-12"
-                  [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
-                  <option>Bafang</option>
-                  <option>Bafia</option>
-                  <option>Bafoussam</option>
-                  <option>Bamenda</option>
-                  <option>Bangangté</option>
-                  <option>Buéa</option>
-                  <option>Douala</option>
-                  <option>Dschang</option>
-                  <option>Ebolowa</option>
-                  <option>Foumban</option>
-                  <option>Garoua</option>
-                  <option>Kaélé</option>
-                  <option>Koussérie</option>
-                  <option>Kribi</option>
-                  <option>Mbalmayo</option>
-                  <option>Mbanga</option>
-                  <option>Nagoundéré</option>
-                  <option>Sangmélima</option>
-                  <option>Yagoua</option>
-                  <option selected>Yaoundé</option>
+              <select id="city" formControlName="city" [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+                <option>Sélectinnez votre ville</option>
+                <option *ngFor="let cities of
+                 city">{{cities.name}}</option>
               </select>
               <div *ngIf="submitted && f.city.errors" class="invalid-feedback text-danger">
-                  <div *ngIf="f.city.errors.required"> 👈🏾</div>
+                <div *ngIf="f.city.errors.required"> 👈🏾</div>
               </div>
             </ion-item>
-
             <ion-item>
               <div *ngIf="submitted && f.user_agree.errors" class="invalid-feedback text-danger">
                 <div *ngIf="f.user_agree.errors.required">👉🏾 </div>
@@ -117,7 +102,8 @@
 
             <div class="bottom-section">
               <ion-button type="submit" (click)="submit()">S'enregistrer</ion-button>
-              <span style="color: black"> Vous avez déjà un compte ? <a (click)="navigateToSigninPage()">Connexion</a></span>
+              <span style="color: black"> Vous avez déjà un compte ? <a
+                  (click)="navigateToSigninPage()">Connexion</a></span>
             </div>
           </form>
         </ion-card-content>
