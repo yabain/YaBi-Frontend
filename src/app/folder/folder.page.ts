@@ -25,7 +25,7 @@ export class FolderPage implements OnInit {
   }
   navigateToLoginPage()
   {
-    this.router.navigate(['login']);
+    this.router.navigate(['auth/login']);
   }
   navigateToSearchPage()
   {

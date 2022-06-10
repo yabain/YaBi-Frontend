@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border" style="padding-top: 0px; padding-bottom: 0px;margin-bottom: 0;">
+    <ion-toolbar style="padding-left: 0px; padding-top: 10px;">
+        <ion-buttons slot="start">
+            <img src="../../../assets/chevron-left.png" style="color: #275C3C; height: 35px"
+                (click)="closeCamera();prviousPage()">
+            <!-- <i class="fa fa-arrow-left" style="color: #275C3C; font-size: 25px" (click)="prviousPage()"></i> -->
+        </ion-buttons>
+        <ion-title style="color: #275C3C" class="center col col-center text-center"> {{title}}</ion-title>
+        <ion-buttons slot="primary" (click)="navigateToNotificationsPage()">
+            <ion-button class="bordered" fill="solid" color="#275C3C" style="color: #275C3C">
+                <ion-icon color="custom" name="notifications" style="color: aliceblue;"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+    <br>
+    <div class="center">
+        <img width="50" src="../../../../../assets/icon/qr_scan_icon.png">
+    </div>
+    <div *ngIf="!showCamera">
+        <ion-button expand="block" (click)="scanCode()">
+            <ion-icon slot="start" name="qr-scanner"></ion-icon>
+            Scanner un QR-Code
+        </ion-button>
+        <ion-item *ngIf="textScanned" lines="none">
+            <ion-label>
+                <p>Données du QR-Code</p>
+                <h2><b>{{ textScanned }}</b></h2>
+            </ion-label>
+        </ion-item>
+    </div>
+
+    <ion-icon *ngIf="showCamera" class="frame" name="qr-scanner"></ion-icon>
+
+    <!-- <ion-button expand="block" (click)="closeCamera()" *ngIf="showCamera">
+        <ion-icon name="close"></ion-icon>
+    </ion-button> -->
+</ion-content>

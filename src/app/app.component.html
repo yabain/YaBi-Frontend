@@ -3,12 +3,10 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content class="toolbar-background" style="background: #fff !important">
         <ion-list class="toolbar-background" id="inbox-list" style=" background-color: white !important">
-          <ion-toolbar class="toolbar-background bg-img" style="padding-top: 0px; background-color: white;">
-            <img src="../assets/logo_yabi00.png" style="background-color: white;">
-          </ion-toolbar>
+          <ion-header class="toolbar-background bg-img" style="padding-top: 0px; background-color: white;">
+            <img src="../assets/logo_yabi00.png" style="background-color: white; width: 150px;">
+          </ion-header>
           <br>
-          <!-- <ion-list id="labels-list" style="background-color: white">
-          </ion-list> -->
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item class="item" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
@@ -17,7 +15,7 @@
               <ion-label style="color: #275C3C;">{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
-          <br><br><br><br><br>
+          <br><br>
         </ion-list>
 
         <ion-list id="labels-list" style="background-color: white">

@@ -20,7 +20,7 @@ export class TabsPage implements OnInit {
   }
   navigateToLoginPage()
   {
-    this.router.navigate(['login']);
+    this.router.navigate(['auth/login']);
   }
   navigateToSearchPage()
   {

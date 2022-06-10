@@ -1,4 +1,5 @@
 ion-menu ion-content {
+  --ion-background-color: white;
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
 
@@ -123,6 +124,7 @@ ion-item.selected {
 }
 
 ion-toolbar {
+  --ion-background-color: white;
   background-color: white;
   .bordered {
     --border-radius: 10px;
@@ -151,6 +153,7 @@ ion-split-pane {
     
 
     ion-content {
+      --ion-background-color: white;
       --background: #fff !important;
 
       ion-list-header {

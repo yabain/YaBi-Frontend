@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class QrGenerationComponent implements OnInit {
+  title = 'Transfert';
   qrLink = 'https://yabain.com';
+  public textToCode: string;
+  public myAngularxQrCode: string = null;
 
   constructor() { }
 
@@ -15,6 +18,11 @@ export class QrGenerationComponent implements OnInit {
   }
 
   save() {
+  }
+
+  createQRCode(){
+    this.myAngularxQrCode = this.textToCode;
+    this.textToCode = '';
   }
 
 }

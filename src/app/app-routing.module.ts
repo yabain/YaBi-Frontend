@@ -5,7 +5,6 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'mainscreen',
-    // redirectTo: 'folder/Inbox',
     pathMatch: 'full'
   },
   {
@@ -17,21 +16,18 @@ const routes: Routes = [
     loadChildren: () => import('./front/mainscreen/mainscreen.module').then( m => m.MainscreenPageModule)
   },
   {
-    path: 'login',
-    loadChildren: () => import('./front/login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'signup',
-    loadChildren: () => import('./front/signup/signup.module').then( m => m.SignupPageModule)
-  },
-  {
-    path: 'fogotpassword',
-    loadChildren: () => import('./front/fogotpassword/fogotpassword.module').then( m => m.FogotpasswordPageModule)
-  },
-  {
     path: 'about',
     loadChildren: () => import('./front/about/about.module').then( m => m.AboutPageModule)
-  }
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./front/auth/auth.module').then( m => m.AuthModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'mainscreen',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

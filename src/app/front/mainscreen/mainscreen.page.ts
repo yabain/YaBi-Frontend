@@ -14,7 +14,7 @@ export class MainscreenPage implements OnInit {
   }
 
   loginPage() {
-    this.route.navigate(['login']);
+    this.route.navigate(['auth/login']);
     // this.route.navigate(['folder/Trash']);
   }
 
