@@ -1,0 +1,252 @@
+<app-title [title]="title"></app-title>
+
+<ion-content [fullscreen]="true">
+
+    <div id="container">
+        <ion-card class="img-add-event bordered">
+            <ion-card-header>
+                <!-- <ion-card-subtitle>Assister aux</ion-card-subtitle> -->
+                <ion-card-title class="add-event"><i>Profil</i></ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                Profil Profil Profil Profil Profil Profil
+            </ion-card-content>
+        </ion-card><br>
+    </div>
+    <form style="color: black;">
+        <fieldset class="form-group">
+            <div class="custom-control custom-radio">
+                <input style="margin-left: 15px; margin-right: 10px;" type="radio" id="customRadio1" name="customRadio"
+                    class="custom-control-input">
+                <label class="custom-control-label" for="customRadio1">Évènement publique</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input style="margin-left: 15px; margin-right: 10px;" type="radio" id="customRadio2" name="customRadio"
+                    class="custom-control-input">
+                <label class="custom-control-label" for="customRadio2">Évènement privé</label>
+            </div>
+        </fieldset>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="categorie">Catégorie</label>
+                <select id="categorie" class="form-control">
+                    <option selected>Sport</option>
+                    <option>Conférence</option>
+                    <option>Fiesta</option>
+                    <option>Concert</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="titre">Titre</label>
+                <input type="text" class="form-control" id="titre" placeholder="Nom de l'évènement">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" placeholder="A propos de l'évènement">
+            </div><br>
+            <span style="margin-left: 15px; color: #275C3C; font-size: 1.5em;"> Dates</span>
+            <div class='col-sm-6'>
+                <label for="date" style="margin-left: auto !important;">Début</label>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='date' class="form-control" id="date" placeholder="jj/mm/aaaa" />
+                        <span class="input-group-addon" for="date">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-6'>
+                <label for="date">Heure</label>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='time' class="form-control" id="date" placeholder="hh:mm" />
+                        <span class="input-group-addon" for="date">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-6'>
+                <label for="date">Fin</label>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='date' class="form-control" id="date" placeholder="jj/mm/aaaa" />
+                        <span class="input-group-addon" for="date">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-6'>
+                <label for="date">Heure</label>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='time' class="form-control" id="date" placeholder="hh:mm" />
+                        <span class="input-group-addon" for="date">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+            </div><br>
+            <span style="margin-left: 15px; color: #275C3C; font-size: 1.5em;"> Lieu</span>
+            <div class="form-group col-md-6">
+                <label for="pays">Pays</label>
+                <select id="pays" class="form-control">
+                    <option selected>Cameroun</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="city">Ville</label>
+                <select id="city" class="form-control">
+                    <option>Bafang</option>
+                    <option>Bafia</option>
+                    <option>Bafoussam</option>
+                    <option>Bamenda</option>
+                    <option>Bangangté</option>
+                    <option>Buéa</option>
+                    <option>Douala</option>
+                    <option>Dschang</option>
+                    <option>Ebolowa</option>
+                    <option>Foumban</option>
+                    <option>Garoua</option>
+                    <option>Kaélé</option>
+                    <option>Koussérie</option>
+                    <option>Kribi</option>
+                    <option>Mbalmayo</option>
+                    <option>Mbanga</option>
+                    <option>Nagoundéré</option>
+                    <option>Sangmélima</option>
+                    <option>Yagoua</option>
+                    <option selected>Yaoundé</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="place">Lieux</label>
+                <input type="text" class="form-control" id="place">
+            </div>
+            <br>
+
+            <span style="margin-left: 15px; color: #275C3C; font-size: 1.5em;"> Type de billets</span>
+            <ul class="nav nav-tabs">
+                <li><a data-toggle="tab" href="#free" style="color: #42574a;">Gratuit</a></li>
+                <li class="active"><a data-toggle="tab" href="#simple" style="color: #42574a;">Uniformes</a></li>
+                <li><a data-toggle="tab" href="#graduel" style="color: #42574a;">Graduels</a></li>
+            </ul>
+
+            <div class="form-group col-md-4">
+                <div class="tab-content">
+                    <div id="simple" class="tab-pane fade in active">
+                        <h3>Billets uniformes</h3>
+                        <p>Toutes les invitations sont de même valeur.</p>
+                        <label for="place">Valeur du pass</label>
+                        <div class='input-group date col-md-4' id='datetimepicker1'>
+                            <input type='number' class="form-control" id="date" placeholder="1 500" />
+                            <span class="input-group-addon" for="date">
+                                FCFA
+                            </span>
+                        </div>
+                        <div class='input-group date col-md-4' id='datetimepicker1'>
+                            <input type='number' class="form-control" id="date" placeholder="100" />
+                            <span class="input-group-addon" for="date">
+                                Places
+                            </span>
+                        </div>
+                        <br>
+                        <div class="form-check">
+                            <ion-toggle color="success" id="unifRemb" style="padding-bottom: 0px;"></ion-toggle>
+                            <label class="form-check-label" for="unifRemb" style="margin-left: 0px;">
+                                Billet Remboursable
+                            </label><br>
+                            En cochant cette case vous acceptez le retour des billets et leur remboursement jusqu'à <b>1 heure</b> avant le début de votre évènement.
+                        </div>
+                    </div>
+                    <div id="graduel" class="tab-pane fade">
+                        <h3>Billets Graduel</h3>
+                        <!-- <p>Les invitations sont échell.</p> -->
+                        <br>
+                        <ion-toggle color="success" id="classicChk" style="padding-bottom: 0px;" checked></ion-toggle>
+                        <label for="classic" style="margin-left: 10px;">Pass CLASSIQUE</label>
+                        <div class='input-group date col-md-4' id='datetimepicker1'>
+                            <input type='number' class="form-control" id="date" placeholder="1500" />
+                            <span class="input-group-addon" for="date">
+                                FCFA
+                            </span>
+                        </div>
+                        <div class='input-group date col-md-4' id='datetimepicker1'>
+                            <input type='number' class="form-control" id="date" placeholder="100" />
+                            <span class="input-group-addon" for="date">
+                                Places
+                            </span>
+                        </div>
+                        <br>
+                        <ion-toggle color="success" id="vipchk" style="padding-bottom: 0px;" checked></ion-toggle>
+                        <label for="vipchk" style="margin-left: 10px;">Pass VIP</label>
+                        <div class='input-group date col-md-4' id='datetimepicker1'>
+                            <input type='number' class="form-control" id="date" placeholder="5000" />
+                            <span class="input-group-addon" for="date">
+                                FCFA
+                            </span>
+                        </div>
+                        
+                        <div class='input-group date col-md-4' id='datetimepicker1'>
+                            <input type='number' class="form-control" id="date" placeholder="100" />
+                            <span class="input-group-addon" for="date">
+                                Places
+                            </span>
+                        </div><br>
+                        <ion-toggle color="success" id="prestigeChk" style="padding-bottom: 0px;" checked></ion-toggle>
+                        <label for="prestigeChk" style="margin-left: 10px;">Pass PRESTIGE</label>
+                        <div class='input-group date col-md-4' id='datetimepicker1'>
+                            <input type='number' class="form-control" id="date" placeholder="10000" />
+                            <span class="input-group-addon" for="date">
+                                FCFA
+                            </span>
+                        </div>
+                        <div class='input-group date col-md-4' id='datetimepicker1'>
+                            <input type='number' class="form-control" id="date" placeholder="100" />
+                            <span class="input-group-addon" for="date">
+                                Places
+                            </span>
+                        </div><br>
+                        <div class="form-check">
+                            <ion-toggle color="success" id="gradRemb" style="padding-bottom: 0px;"></ion-toggle>
+                            <label class="form-check-label" for="gradRemb" style="margin-left: 10px;">
+                                Billet Remboursable
+                            </label><br>
+                            En cochant cette case vous acceptez le retour des billets et leur remboursement jusqu'à <b>1 heure</b> avant le début de votre évènement.
+                        </div>
+                    </div>
+                    <div id="free" class="tab-pane fade">
+                        <h3>Billets Gratuit</h3>
+                        <p>Les participants aacèderons gratuitement aux invitation dans la mesure du disponible</p>
+                        <div class='input-group date col-md-4' id='datetimepicker1'>
+                            <input type='number' class="form-control" id="date" placeholder="100" />
+                            <span class="input-group-addon" for="date">
+                                Places
+                            </span>
+                        </div> 
+                    </div>
+                    <br>
+                    <button (click)="submit()" type="submit" class="btn btn-success center"><b> Soumettre l'évent </b></button>
+                </div>
+            </div>
+            <!-- <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div> -->
+        </div>
+        <!-- <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Check me out
+                </label>
+            </div>
+        </div> -->
+    </form>
+    <!-- </ion-item> -->
+    <br><br><br><br>
+
+</ion-content>

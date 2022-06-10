@@ -1,0 +1,23 @@
+<!-- Default -->
+<ion-popover [isOpen]="false"><br><br><br>
+    <ng-template>
+        <ion-content>Popover Content</ion-content>
+    </ng-template>
+</ion-popover>
+
+<!-- Nested Popover -->
+<ion-button id="nested-button">1111Click to open popover</ion-button>
+<ion-popover trigger="nested-button" [dismissOnSelect]="true" [isOpen]="true">
+    <ng-template>
+        <ion-content>
+            <ion-list>
+                <ion-list-header>Ionic</ion-list-header>
+                <ion-item button>Learn Ionic</ion-item>
+                <ion-item button>Documentation</ion-item>
+                <ion-item button>Showcase</ion-item>
+                <ion-item button>GitHub Repo</ion-item>
+                <ion-item lines="none" detail="false" button onClick="dismissPopover()">Close</ion-item>
+            </ion-list>
+        </ion-content>
+    </ng-template>
+</ion-popover>

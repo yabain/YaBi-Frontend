@@ -1,27 +1,21 @@
 import { Component } from '@angular/core';
-
-import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
-  ) {
-    this.initializeApp();
-  }
-
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
+  public appPages = [
+    { title: 'Catégorie', url: 'folder/categories', icon: '../assets/icon/icon_calendar.png', labels: 'Catégorie' },
+    { title: 'Mes billets', url: 'folder/billes', icon: '../assets/icon/icon_barcode.png', labels: 'Billets' },
+    { title: 'Mes favoris', url: 'folder/favoris', icon: '../assets/icon/icon_badg.png', labels: 'Favoris' },
+    { title: 'Mes invitations', url: 'folder/invitations', icon: '../assets/icon/icon_folder.png', labels: 'Invitations' },
+    { title: 'YaBi wallet', url: 'folder/wallet', icon: '../assets/icon/icon_wallet.png', labels: 'Wallet' },
+    { title: 'Historique', url: 'folder/history', icon: '../assets/icon/icon_history.png', labels: 'Historique' },
+  ];
+  public labels = ['Catégorie', 'Billets', 'Favoris', 'Invitations', 'Wallet', 'Historique'];
+  constructor( private router: Router) {
   }
 }

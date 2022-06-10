@@ -1,0 +1,108 @@
+<app-title [title]="title"></app-title>
+<ion-content style="padding-top: 0px; margin-top: 0px;">
+
+    <div class="bg">
+        <img src="../../../assets/cover.png" alt="bg">
+    </div>
+
+    <div class="container">
+        <div class="img__profile">
+            <img src="../../../assets/user.png" alt="profile">
+            <div class="name"></div>
+            <br>
+            <span class="id">ID {{userId}}</span>
+        </div>
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#profil" style="color: #42574a;">Informations</a></li>
+            <li><a data-toggle="tab" href="#events" style="color: #42574a;">Événements</a></li>
+        </ul>
+
+        <div class="form-group col-md-4">
+            <div class="tab-content">
+                <div id="profil" class="tab-pane fade in active">
+                    <div class="item">
+                        <img src="../../../assets/Profile.png" alt="profile">
+                        <span>{{userName}}</span>
+                        <div class="icon"
+                            (click)="openModal('Nom complet', 'userName', 'Rassurez-vous que le nom renseigné soit correct.')">
+                            <img src="../../../assets/icon/icon_edit.png">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="../../../assets/icon/icon_flag.png" style="height: 35px; width: 35px !important"
+                            alt="country">
+                        <!-- <img src="../../../assets/Wallet.png" alt="Wallet"> -->
+                        <span>{{country}}</span>
+                        <div class="icon"
+                            (click)="openModal('Pays', 'country', 'Rassurez-vous que le pays renseigné soit correct.')">
+                            <img src="../../../assets/icon/icon_edit.png">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="../../../assets/map-pin.png" alt="map-pin">
+                        <span>{{city}}</span>
+                        <div class="icon"
+                            (click)="openModal('Ville', 'city', 'Rassurez-vous que la renseignée soit correct.')">
+                            <img src="../../../assets/icon/icon_edit.png">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="../../../assets/icon/icon_phone.png" style="height: 35px; width: 40px !important"
+                            alt="phone">
+                        <span>{{phone}}</span>
+                        <div class="icon"
+                            (click)="openModal('Numéro de téléphone', 'phone', 'Rassurez-vous que le numéro de téléphone que vous renseignez soit correct.')">
+                            <img src="../../../assets/icon/icon_edit.png">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="../../../assets/icon/icon_envelop.png" style="height: 25px; width: 40px !important"
+                            alt="envelope">
+                        <span>{{email}}</span>
+                        <div class="icon"
+                            (click)="openModal('Email', 'email', 'Rassurez-vous que cet email renseigné soit correct.')">
+                            <img src="../../../assets/icon/icon_edit.png">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="../../../assets/icon/icon_locker.png" style="height: 30px; width: 40px !important"
+                            alt="locker">
+                        <span>
+                            <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                            <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                            <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                            <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                            <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                            <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                            <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                            <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                            <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                        </span>
+                        <div class="icon">
+                            <img src="../../../assets/icon/icon_edit.png"
+                                (click)="openModal('Mot de passe', '********', 'Rassurez-vous que votre ancien mot de passe renseigné soit correct. Si vous avez oublié votre mot de passe, vous recevrez un email pour le réinitialiser.')">
+                        </div>
+                    </div>
+                    <div class="item__logout" (click)="navigateToLoginPage()">
+                        <img src="../../../assets/log-out.png" alt="log-out">
+                        <span>Déconnexion</span>
+                        <div class="icon">
+                            <img class="logout" src="../../../assets/chevron-right.png" alt="more">
+                        </div>
+                    </div>
+                </div>
+                <div id="events" class="tab-pane fade">
+                    <h3>Billets Graduel</h3>
+                    <div class="form-check">
+                        <label class="form-check-label" for="gradRemb" style="margin-left: 10px;">
+                            Aucun événements.
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br><br>
+</ion-content>

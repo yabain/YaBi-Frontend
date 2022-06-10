@@ -1,3 +1,35 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content class="toolbar-background" style="background: #fff !important">
+        <ion-list class="toolbar-background" id="inbox-list" style=" background-color: white !important">
+          <ion-toolbar class="toolbar-background bg-img" style="padding-top: 0px; background-color: white;">
+            <img src="../assets/logo_yabi00.png" style="background-color: white;">
+          </ion-toolbar>
+          <br>
+          <!-- <ion-list id="labels-list" style="background-color: white">
+          </ion-list> -->
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item class="item" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <!-- <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon> -->
+              <img slot="start" src="{{p.icon}}" alt="{{ p.labels }}" style="height: 25px; width: 30px">
+              <ion-label style="color: #275C3C;">{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <br><br><br><br><br>
+        </ion-list>
+
+        <ion-list id="labels-list" style="background-color: white">
+          <!-- <ion-list-header>Labels</ion-list-header> -->
+
+          <ion-item lines="none">
+            <img src="../assets/icon/icon_info.png" alt="categories" style=" margin-right: 30px;">
+            <ion-label style="color: #275C3C;"> A propos</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>

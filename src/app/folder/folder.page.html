@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <!-- <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="middle-button-container" (click)="navigateToAddEventPage()">
+    <p style="text-align:center;">
+      <ion-fab style="margin-top: -70px; margin-left: -30px;">
+        <ion-fab-button style="--background:#FFFFFF" size="small">
+          <ion-icon name="add-circle" style="width: 30px; height: 30px; color:#275C3C" size="large"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </p>
+  </div>
+
+  <div id="container">
+    <strong class="capitalize">{{ folder }}</strong>
+    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  </div>
+
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" style="background: #ffffff !important; border-color: #7ebd96d3; border-radius: 15px 15px 0 0;">
+
+    <ion-tab-button style="background: #ffffff !important;">
+      <div id="main" style="background: #ffffff !important;">
+        <ion-menu-toggle style="background: #ffffff !important;">
+          <img src="../../../assets/icon/icon_menu.png">
+          <!-- <ion-icon name="apps" style="width: 22px; height: 22px;color: #275C3C"></ion-icon> -->
+        </ion-menu-toggle>
+      </div>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="navigateToHomePage()">
+
+      <ion-icon name="home" style="width: 22px; height: 22px; color:#275C3C"></ion-icon>
+      <!-- <ion-icon src="assets/bookmark.svg"></ion-icon> -->
+    </ion-tab-button>
+
+    <ion-tab-button>
+      <!-- <ion-icon src="assets/Location.svg"></ion-icon> -->
+    </ion-tab-button>
+
+    <ion-tab-button (click)="navigateToSearchPage()">
+      <ion-icon style="width: 22px; height: 22px; color:#275C3C" name="search"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="navigateToProfilePage()">
+      <ion-icon style="width: 22px; height: 22px; color:#275C3C" name="person-circle"></ion-icon>
+      <!-- <ion-icon style="color:#275C3C" src="assets/account_circle.svg"></ion-icon> -->
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
+</ion-content>
