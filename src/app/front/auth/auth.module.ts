@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPage } from './login/login.page';
 import { SignupPage } from './signup/signup.page';
 import { FogotpasswordPage } from './fogotpassword/fogotpassword.page';
+import { ProgressIndeterminateModule } from 'src/app/shared/elements/progress-indeterminate/progress-indeterminate.module';
 
 
 @NgModule({
@@ -22,7 +23,13 @@ import { FogotpasswordPage } from './fogotpassword/fogotpassword.page';
     RouterModule,
     ReactiveFormsModule,
     AuthRoutingModule,
-    IonicModule
+    IonicModule,
+    ProgressIndeterminateModule
+  ],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthModule { }

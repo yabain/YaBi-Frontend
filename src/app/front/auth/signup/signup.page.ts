@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { YUser } from 'src/app/shared/entities/users';
 import { LocationService } from '../../../shared/services/location/location.service';
+import { YUserStoreService } from 'src/app/shared/services/store/yuser/yuser-store.service';
+import { UserPreferenceService } from 'src/app/shared/services/user/user-preference/user-preference.service';
+import { YUserProfilService } from 'src/app/shared/services/user/user-profil/yuser-profil.service';
+import { FirebaseError } from 'src/app/shared/utils/services/firebase';
 // import { MustMatch } from '../shared/services/MustMatch';
 
 @Component({
@@ -12,7 +17,7 @@ import { LocationService } from '../../../shared/services/location/location.serv
 export class SignupPage implements OnInit {
   submitted = false;
   registerForm: FormGroup;
-  registrationMessage: String = '';
+  registrationMessage = '';
   waitingRegistration = false;
   country: any = [];
   city: any = [];
@@ -20,8 +25,13 @@ export class SignupPage implements OnInit {
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
-    private location: LocationService
-    ) { }
+    private location: LocationService,
+    private preferencesService: UserPreferenceService,
+    private usersStoreService: YUserStoreService,
+    private userProfile: YUserProfilService
+    ) {
+      preferencesService.getPreferencesFromDevice();
+    }
 
   ngOnInit(): void {
     this.country = this.location.country();
@@ -63,10 +73,39 @@ export class SignupPage implements OnInit {
 
     // stop here if form is invalid
     if (this.registerForm.invalid) {
+      this.submitted = false;
       return;
     }
     // this.waitingRegistration = true;
-    this.navigateToSigninPage();
+    let user = new YUser();
+
+    user.hydrate(this.registerForm.value);
+    if ( user.country == '1'){
+      console.log('test');
+      user.country = 'Cameroun'
+    } else if ( user.country == '2'){
+      user.country = 'Congo'
+    } else if ( user.country == '3'){
+      user.country = 'Gabon'
+    } else if ( user.country == '4'){
+      user.country == 'Guinée équatoriale'
+    } else if ( user.country == '5'){
+      user.country = 'RC'
+    }
+    console.log('user data: ', user);
+    this.usersStoreService.createNewAccount(user)
+      .then((result) => {
+        this.userProfile.setUser(user);
+        // return this.userPreference.initPreference()
+        console.log('Good: Utilisateur enregistré!');
+        this.navigateToSigninPage();
+      })
+      .catch((error) => {
+        FirebaseError.handleApiError(error);
+        this.submitted = false;
+        console.error('Erreur: ', error);
+      });
   }
+
 }
 

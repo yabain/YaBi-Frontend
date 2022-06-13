@@ -20,4 +20,5 @@ export class YUser extends YEntity
     tweeter_link:String=""
     instagram_link:String="";
     tiktok_link:String="";
+    user_agree = false;
 }

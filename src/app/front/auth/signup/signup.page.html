@@ -10,7 +10,7 @@
           </ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="registerForm" (ngSubmit)="submit()">
             <ion-item>
               <ion-input type="text" id="firstName" placeholder="Nom" formControlName="firstName"
                 [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"></ion-input><br>
@@ -101,7 +101,7 @@
             </ion-item>
 
             <div class="bottom-section">
-              <ion-button type="submit" (click)="submit()">S'enregistrer</ion-button>
+              <ion-button type="submit">S'enregistrer</ion-button>
               <span style="color: black"> Vous avez déjà un compte ? <a
                   (click)="navigateToSigninPage()">Connexion</a></span>
             </div>
