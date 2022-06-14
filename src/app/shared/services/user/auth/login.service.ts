@@ -35,5 +35,9 @@ export class LoginService {
       })
     })
   }
+  logOut(){
+    localStorage.setItem('isAuth', '0');
+    this.authService.logOut();
+  }
 
 }

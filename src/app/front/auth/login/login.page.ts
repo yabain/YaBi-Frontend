@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { YUserStoreService } from 'src/app/shared/services/store/yuser/yuser-store.service';
 import { UserPreferenceService } from 'src/app/shared/services/user/user-preference/user-preference.service';
 import { YUserProfilService } from 'src/app/shared/services/user/user-profil/yuser-profil.service';
+import { LoginService } from 'src/app/shared/services/user/auth/login.service';
+import { YUser } from 'src/app/shared/entities/users';
+import { FirebaseError } from 'src/app/shared/utils/services/firebase';
+import { InputValidatorService } from 'src/app/shared/vaildators/input-validator/input-validator.service';
+import { AuthService } from 'src/app/shared/services/user/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,15 +17,21 @@ import { YUserProfilService } from 'src/app/shared/services/user/user-profil/yus
 export class LoginPage implements OnInit {
   submitted = false;
   loginForm: FormGroup;
-  waitingLogin = false;
+  waitingLogin = true;
 
   constructor(
     private router: Router,
     private formLog: FormBuilder,
     private preferencesService: UserPreferenceService,
-    private usersStoreService: YUserStoreService,
-    private userProfile: YUserProfilService
-  ) { }
+    private userProfile: YUserProfilService,
+    private loginService: LoginService,
+    private sanitezeService: InputValidatorService,
+    private authService: AuthService, ) { 
+      if ( this.authService.isLoggedIn.getValue() == true){
+      // if ( localStorage.getItem('isAuth') == '1'){
+      this.router.navigate(['folder']);
+    }
+  }
 
   ngOnInit(): void {
     this.loginForm = this.formLog.group({
@@ -47,27 +57,30 @@ export class LoginPage implements OnInit {
       return;
     }
     // this.notification.showNotification('top', 'center', 'success', 'pe-7s-close-circle', '\<b>Welcome !\</b>\<br>Message de welcome');
+    this.waitingLogin = true;
+    let user = new YUser();
+    user.hydrate(this.loginForm.value);
     this.router.navigate(['folder']);
-    // this.waitingLogin = true;
-    // let user: User = new User();
-    // user.email=this.sanitezeService.emailSanitize(this.loginForm.value.email);
+    user.email=this.sanitezeService.emailSanitize(this.loginForm.value.email);
     // user.password=this.loginForm.value.password;
 
-    // this.authService.signIn(user)
+    // this.loginService.loginUser(user)
     //     .then((result) => {
-    //         this.router.navigate(['tabs']);
+    //       localStorage.setItem('isAuth', '1');
+    //         this.userProfile.currentUser.getValue();
+    //         this.router.navigate(['folder']);
     //         this.submitted = false;
     //         this.waitingLogin =false;
     //     })
-    //     .catch((error:ResultStatut) => {
-    //         this.waitingLogin = false;
-    //         this.notification.showNotification('top', 'center', 'danger', 'pe-7s-close-circle', '\<b>Sorry !\</b>\<br>'+error.message);
-    //         this.submitted = false;
+    //     .catch((error) => {
+    //       localStorage.setItem('isAuth', '0');
+    //       console.error('Erreur: ', error.message);
+    //       FirebaseError.handleApiError(error);
+    //       this.submitted = false;
     //     });
   }
 
   navigateToSignupPage() {
     this.router.navigate(['auth/signup']);
   }
-
 }

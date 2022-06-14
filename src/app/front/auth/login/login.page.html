@@ -49,11 +49,16 @@
             </ion-item>
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-danger">
               <div *ngIf="f.password.errors.required">Mot de passe requis</div>
-          </div><br>
+          </div>
+          <br>
             <a (click)="navigateToForgotPage()"><b> Mot de passe oublié.</b></a>
 
             <div class="bottom-section">
-              <ion-button type="submit" (click)="submit()"><b> Se connecter </b></ion-button>
+              
+              <ion-button type="submit" (click)="submit()"  *ngIf="!waitingLogin" disabled>
+                <b><app-progress-indeterminate *ngIf="waitingLogin"></app-progress-indeterminate></b>
+              </ion-button>
+              <ion-button type="submit" (click)="submit()"  *ngIf="!waitingLogin"><b> Se connecter </b></ion-button>
               <span style="color: black;"> Pas de compte ? <a (click)="navigateToSignupPage()">Créer </a> maintenant</span>
             </div>
           </form>

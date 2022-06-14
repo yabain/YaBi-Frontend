@@ -36,7 +36,7 @@ export class YUserProfilService {
   setUser(user:YUser):void
   {
     // this.localStorageService.setData("user_profil",user.toString());
-    this.currentUser.next(user)
+    this.currentUser.next(user);
   }
     /*
    * resetPassword is used to reset your password.
@@ -72,4 +72,5 @@ export class YUserProfilService {
         .catch((error)=>reject(error))
       })
     }
+
 }

@@ -21,4 +21,5 @@ export class YUser extends YEntity
     instagram_link:String="";
     tiktok_link:String="";
     user_agree = false;
+    status = true;
 }

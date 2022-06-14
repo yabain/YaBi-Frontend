@@ -7,6 +7,8 @@ import { YUserStoreService } from 'src/app/shared/services/store/yuser/yuser-sto
 import { UserPreferenceService } from 'src/app/shared/services/user/user-preference/user-preference.service';
 import { YUserProfilService } from 'src/app/shared/services/user/user-profil/yuser-profil.service';
 import { FirebaseError } from 'src/app/shared/utils/services/firebase';
+import { RegisterService } from 'src/app/shared/services/user/auth/register.service';
+import { AuthService } from 'src/app/shared/services/user/auth/auth.service';
 // import { MustMatch } from '../shared/services/MustMatch';
 
 @Component({
@@ -27,9 +29,12 @@ export class SignupPage implements OnInit {
     private formBuilder: FormBuilder,
     private location: LocationService,
     private preferencesService: UserPreferenceService,
-    private usersStoreService: YUserStoreService,
-    private userProfile: YUserProfilService
-    ) {
+    private userProfile: YUserProfilService,
+    private registerService: RegisterService,
+    private authService: AuthService, ) { 
+      if ( this.authService.isLoggedIn.getValue() == true){
+        this.router.navigate(['folder']);
+      }
       preferencesService.getPreferencesFromDevice();
     }
 
@@ -45,7 +50,6 @@ export class SignupPage implements OnInit {
       'password': new FormControl('', [Validators.required, Validators.minLength(6)]),
       // 'password2': new FormControl('', [Validators.required]),
       'email': new FormControl('', [Validators.required, Validators.email]),
-
     },
     // {
     //   validator: MustMatch('password', 'password2')
@@ -81,7 +85,6 @@ export class SignupPage implements OnInit {
 
     user.hydrate(this.registerForm.value);
     if ( user.country == '1'){
-      console.log('test');
       user.country = 'Cameroun'
     } else if ( user.country == '2'){
       user.country = 'Congo'
@@ -93,10 +96,11 @@ export class SignupPage implements OnInit {
       user.country = 'RC'
     }
     console.log('user data: ', user);
-    this.usersStoreService.createNewAccount(user)
+    this.registerService.register(user)
       .then((result) => {
+        // this.setLocalstorageCurentUser(user);
+        localStorage.setItem('username', user.firstName.toString());
         this.userProfile.setUser(user);
-        // return this.userPreference.initPreference()
         console.log('Good: Utilisateur enregistré!');
         this.navigateToSigninPage();
       })
@@ -107,5 +111,21 @@ export class SignupPage implements OnInit {
       });
   }
 
+  // setLocalstorageCurentUser(user: YUser) {
+  //    this.authService.currentUserSubject.subscribe((user: User) => {
+  //     localStorage.setItem('username', user.firstName.toString());
+  //     localStorage.setItem('firstName', user.firstName.toString());
+  //     localStorage.setItem('lastName', user.firstName.toString());
+  //     localStorage.setItem('sexe', user.firstName.toString());
+  //     localStorage.setItem('email', user.firstName.toString());
+  //     localStorage.setItem('photoUrl', user.firstName.toString());
+  //     localStorage.setItem('city', user.firstName.toString());
+  //     localStorage.setItem('country', user.firstName.toString());
+  //     localStorage.setItem('about', user.firstName.toString());
+  //     localStorage.setItem('userType', user.firstName.toString());
+  //     localStorage.setItem('phoneNumber', user.firstName.toString());
+  //     localStorage.setItem('status', user.firstName.toString());
+  //     localStorage.setItem('bonus', user.firstName.toString());
+  //    });
+  // }
 }
-
