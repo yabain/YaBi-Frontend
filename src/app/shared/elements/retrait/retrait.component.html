@@ -1,0 +1,69 @@
+<ion-header class="ion-no-border" style="padding-top: 5px; padding-bottom: 0px;margin-bottom: 0;">
+    <ion-toolbar style="padding-left: 0px; padding-top: 5px;">
+        <ion-buttons slot="start">
+            <img src="../../../../assets/chevron-left.png" style="color: #275C3C; height: 35px" (click)="closeModal()">
+        </ion-buttons>
+        <ion-title style="color: #275C3C" class="center col col-center text-center">Retrait</ion-title>
+
+        <ion-buttons slot="end" id="more-button">
+            <ion-button>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div id="container" style="background-color: white;">
+      <!-- Deposit Action Sheet -->
+      <div class=" action-sheet" id="depositActionSheet" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Effectuer un retrait du wallet</h5>
+            </div>
+            <div class="modal-body">
+              <div class="action-sheet-content">
+                <form>
+                  <div class="form-group basic" style="color: black;">
+                    <label class="label" style="color: #275C3C; font-size: medium;">Montant du retrait</label>
+                    <div class="input-group mb-2">
+                      <input type="text" class="form-control" placeholder="5000" value="">
+                      <br>Le montant de la transaction doit être supérieur ou égal à 500 FCFA.
+                    </div>
+                  </div>
+                  <div class="form-group basic">
+                    <div class="input-wrapper">
+                      <label class="label" for="account1" style="color: #275C3C; font-size: medium;">Méthode</label>
+                      <select class="form-control custom-select" id="account1">
+                        <option value="OM">Orange Money</option>
+                        <option value="MOMO">MTN Mobile Money</option>
+                        <option value="PAYPAL">PayPal</option>
+                        <option value="VISA">Visa</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+
+                  <div class="form-group basic">
+                    <button type="button" class="btn btn-block btn-lg" style="background-color: #275C3C"
+                      data-bs-dismiss="modal">Retrait</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ion-padding">
+      <p class="ion-padding" style="color: black; text-align: justify;">Recharger votre porte-feuille YaBi pour plus de simplicité dans vos achats et sponsorisez les en quelques clicks.</p>
+      <!-- * Deposit Action Sheet -->
+      <br>
+      <img src="../../../../assets/om.png" style="color: #275C3C; height: 35px; margin: 5px 5px 5px 15px; border-radius: 5px;">
+      <img src="../../../../assets/momo.png" style="color: #275C3C; height: 35px; margin: 5px; border-radius: 5px;">
+      <img src="../../../../assets/paypal.png" style="color: #275C3C; height: 35px; margin: 5px; border-radius: 5px;">
+    </div>
+  </div>
+
+</ion-content>

@@ -24,6 +24,7 @@ export enum YEventSubType
 {
     SHOWBIZZ_CONCERT="showbizz_concert",
     SHOWBIZZ_THEATRE="showbizz_theatre",
+    SHOWBIZZ_CINEMA="showbizz_cinema",
     SPORT_FOOTBALL="sport_football",
     SPORT_HANDBALL="sport_handball"
 }

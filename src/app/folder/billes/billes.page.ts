@@ -72,9 +72,15 @@ export class BillesPage implements OnInit {
 
   ngOnInit() {
   }
-
+  
+  navigateToScan(){
+    this.router.navigate(['folder/qr-code/scan']);
+  }
+  navigateToHistoryPage(){
+    this.router.navigate(['folder/history/billets']);
+  }
   navigateToHomePage() {
-    this.router.navigate(['tabs/home']);
+    this.router.navigate(['folder/home']);
   }
 
 }

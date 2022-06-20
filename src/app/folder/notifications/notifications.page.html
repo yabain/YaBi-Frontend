@@ -1,23 +1,38 @@
-<!-- Default -->
-<ion-popover [isOpen]="false"><br><br><br>
-    <ng-template>
-        <ion-content>Popover Content</ion-content>
-    </ng-template>
-</ion-popover>
+<ion-header class="ion-no-border" style="padding-top: 0px; padding-bottom: 0px;margin-bottom: 0;">
+    <ion-toolbar style="padding-left: 0px; padding-top: 10px;">
+        <ion-buttons slot="start">
+            <img src="../../../assets/chevron-left.png" style="color: #275C3C; height: 35px"
+                (click)="navigateToHomePage()">
+            <!-- <i class="fa fa-arrow-left" style="color: #275C3C; font-size: 25px" (click)="prviousPage()"></i> -->
+        </ion-buttons>
+        <ion-title style="color: #275C3C" class="center col col-center text-center"> {{title}}</ion-title>
+        
+        <ion-buttons slot="end" id="more-notif-button">
+            <ion-button>
+                <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical" style="color: #275C3C;"
+                    ></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
 
-<!-- Nested Popover -->
-<ion-button id="nested-button">1111Click to open popover</ion-button>
-<ion-popover trigger="nested-button" [dismissOnSelect]="true" [isOpen]="true">
-    <ng-template>
-        <ion-content>
-            <ion-list>
-                <ion-list-header>Ionic</ion-list-header>
-                <ion-item button>Learn Ionic</ion-item>
-                <ion-item button>Documentation</ion-item>
-                <ion-item button>Showcase</ion-item>
-                <ion-item button>GitHub Repo</ion-item>
-                <ion-item lines="none" detail="false" button onClick="dismissPopover()">Close</ion-item>
-            </ion-list>
-        </ion-content>
-    </ng-template>
-</ion-popover>
+
+<ion-content [fullscreen]="true">
+    <div id="container">
+        <!-- Nested Popover -->
+        <ion-button>Popover test</ion-button>
+        <ion-popover trigger="more-notif-button" [dismissOnSelect]="true" [isOpen]="false">
+            <ng-template>
+                <ion-content>
+                    <ion-list>
+                        <ion-list-header>Titre</ion-list-header>
+                        <ion-item button>item 1</ion-item>
+                        <ion-item button>item 2</ion-item>
+                        <ion-item button>item 3</ion-item>
+                        <ion-item lines="none" detail="false" button onClick="dismissPopover()">fermer</ion-item>
+                    </ion-list>
+                </ion-content>
+            </ng-template>
+        </ion-popover>
+    </div>
+</ion-content>

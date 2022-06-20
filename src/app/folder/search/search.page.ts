@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-search',
@@ -9,13 +10,18 @@ import { Router } from '@angular/router';
 export class SearchPage implements OnInit {
   title = 'Recherche';
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private location: Location) { }
 
   ngOnInit() {
   }
 
+  prviousPage() {
+    this.location.back();
+  }
   navigateToHomePage() {
-    this.router.navigate(['tabs/home']);
+    this.router.navigate(['folder/home']);
   }
 
 }

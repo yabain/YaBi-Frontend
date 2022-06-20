@@ -17,7 +17,9 @@ import { AuthService } from 'src/app/shared/services/user/auth/auth.service';
 export class LoginPage implements OnInit {
   submitted = false;
   loginForm: FormGroup;
-  waitingLogin = true;
+  waitingLogin = false;
+  error = false;
+  errorMsg = '';
 
   constructor(
     private router: Router,
@@ -26,9 +28,8 @@ export class LoginPage implements OnInit {
     private userProfile: YUserProfilService,
     private loginService: LoginService,
     private sanitezeService: InputValidatorService,
-    private authService: AuthService, ) { 
-      if ( this.authService.isLoggedIn.getValue() == true){
-      // if ( localStorage.getItem('isAuth') == '1'){
+    private authService: AuthService,) {
+    if (this.authService.isLoggedIn.getValue() == true) {
       this.router.navigate(['folder']);
     }
   }
@@ -39,6 +40,7 @@ export class LoginPage implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
     this.waitingLogin = false;
+    this.error = false;
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
@@ -51,33 +53,42 @@ export class LoginPage implements OnInit {
   }
 
   submit() {
+    this.waitingLogin = false;
     this.submitted = true;
+    this.error = false;
+
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
     }
     // this.notification.showNotification('top', 'center', 'success', 'pe-7s-close-circle', '\<b>Welcome !\</b>\<br>Message de welcome');
     this.waitingLogin = true;
+    this.submitted = true;
     let user = new YUser();
     user.hydrate(this.loginForm.value);
-    this.router.navigate(['folder']);
-    user.email=this.sanitezeService.emailSanitize(this.loginForm.value.email);
-    // user.password=this.loginForm.value.password;
+    user.email = this.sanitezeService.emailSanitize(this.loginForm.value.email);
+    // this.router.navigate(['folder']);
 
-    // this.loginService.loginUser(user)
-    //     .then((result) => {
-    //       localStorage.setItem('isAuth', '1');
-    //         this.userProfile.currentUser.getValue();
-    //         this.router.navigate(['folder']);
-    //         this.submitted = false;
-    //         this.waitingLogin =false;
-    //     })
-    //     .catch((error) => {
-    //       localStorage.setItem('isAuth', '0');
-    //       console.error('Erreur: ', error.message);
-    //       FirebaseError.handleApiError(error);
-    //       this.submitted = false;
-    //     });
+    this.loginService.loginUser(user)
+      .then((result) => {
+        localStorage.setItem('isAuth', '1');
+        this.userProfile.currentUser.getValue();
+        this.router.navigate(['folder']);
+        this.submitted = false;
+        this.waitingLogin = false;
+      })
+      .catch((error) => {
+        localStorage.setItem('isAuth', '0');
+        console.error('Erreur: ', error.message);
+        FirebaseError.handleApiError(error);
+        this.waitingLogin = false;
+        this.errorMsg = error.message;
+        this.error = true;
+        this.submitted = false;
+
+
+        this.router.navigate(['folder']);
+      });
   }
 
   navigateToSignupPage() {

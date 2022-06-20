@@ -59,7 +59,7 @@ email = 'user@yabain.com';
   }
 
   navigateToHomePage() {
-    this.router.navigate(['tabs/home']);
+    this.router.navigate(['folder/home']);
   }
 
   navigateToLoginPage() {

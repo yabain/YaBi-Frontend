@@ -15,7 +15,7 @@ export class FavorisPage implements OnInit {
   }
 
   navigateToHomePage() {
-    this.router.navigate(['tabs/home']);
+    this.router.navigate(['folder/home']);
   }
 
 }

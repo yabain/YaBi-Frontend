@@ -32,7 +32,7 @@ export class NotificationsPage implements OnInit {
   }
 
   navigateToHomePage() {
-    this.router.navigate(['tabs/home']);
+    this.router.navigate(['folder/home']);
   }
 
 }

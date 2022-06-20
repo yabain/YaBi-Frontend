@@ -15,7 +15,7 @@ title = 'Invitations';
   }
 
   navigateToHomePage() {
-    this.router.navigate(['tabs/home']);
+    this.router.navigate(['folder/home']);
   }
 
 }

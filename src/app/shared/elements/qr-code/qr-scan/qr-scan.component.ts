@@ -38,12 +38,15 @@ export class QrScanComponent implements OnInit {
           this.showCamera = false;
         });
       } else if (status.denied){
-
-      } else { }
+        console.log("Veillez autoriser l'utilisation de votre caméra");
+      } else { 
+        console.log("Une erreur s'est produite.");
+      }
     })
-    .catch((e: any) =>
-      console.log('Erreur: ', e)
-    );
+    .catch((e: any) => {
+      console.log('Erreur: ', e);
+      this.showCamera = false;
+    });
   }
 
   closeCamera(){

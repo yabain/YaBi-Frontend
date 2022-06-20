@@ -1,8 +1,4 @@
-import { YEntity } from "./yentity";
-import { YEntityID } from "./yentityid";
+export * from "./yentity";
+export * from "./yentityid";
 
-export 
-{
-    YEntity,
-    YEntityID
-}
+

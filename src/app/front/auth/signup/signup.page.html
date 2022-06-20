@@ -93,15 +93,27 @@
               <div *ngIf="submitted && f.user_agree.errors" class="invalid-feedback text-danger">
                 <div *ngIf="f.user_agree.errors.required">👉🏾 </div>
               </div>
-              <input checked type="checkbox" class="switch-input" id="user_agree" name="checkbox-1"
+              <input checked type="checkbox" class="switch-input" id="user_agree" name="user_agree"
                 [ngClass]="{ 'is-invalid': submitted && f.user_agree.errors }" formControlName="user_agree">
-              <span class="switch-slider" data-checked="&#x2713;" data-unchecked="&#x2715;"></span><span
+              <span for="user_agree" class="switch-slider" data-checked="&#x2713;" data-unchecked="&#x2715;"></span><span
                 style="color: black;"> J'accepte les
                 <a href="#"><b> termes d'utilisation</b></a>.</span>
             </ion-item>
+            <div class="alert" *ngIf="error">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <strong>Erreur:</strong> {{errorMsg}}
+            </div>
+            <div class="alertSuccess" *ngIf="success">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <strong>Félicitation!</strong> Votre Compte a bien été créé. Vous devez maintenant vous connecter.
+            </div>
 
             <div class="bottom-section">
-              <ion-button type="submit">S'enregistrer</ion-button>
+              <ion-button type="submit" *ngIf="waitingRegistration" disabled>
+                <b><app-progress-indeterminate></app-progress-indeterminate></b>
+              </ion-button>
+              <ion-button type="submit" *ngIf="!waitingRegistration">S'enregistrer</ion-button>
+              
               <span style="color: black"> Vous avez déjà un compte ? <a
                   (click)="navigateToSigninPage()">Connexion</a></span>
             </div>

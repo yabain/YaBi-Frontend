@@ -7,6 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: SearchPage
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ];
 

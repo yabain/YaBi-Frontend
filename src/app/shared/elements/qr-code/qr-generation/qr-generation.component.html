@@ -1,15 +1,6 @@
 <app-title [title]="title"></app-title>
 
 <ion-content>
-    <!-- for test -->
-    <ion-item lines="none">
-        <ion-label><b>Chaine de caractère à trensformer en qr-code: </b></ion-label>
-        <ion-input [(ngModel)]="textToCode" placeholder="chaine de caractère"></ion-input>
-    </ion-item>
-    <ion-button expand="block" (click)="createQRCode()">
-        Cr"er le QR Code
-    </ion-button>
-    <!-- /for test -->
 
     <h2 class="center" style="color: #275C3C">Transfert de billet</h2>
 
@@ -17,21 +8,35 @@
         billet:</p><br>
 
     <div class="center" *ngIf="myAngularxQrCode">
-        <qrcode [qrdata]="myAngularxQrCode" [width]="170" [errorCorrectionLevel]="'M'" [colorDark]="'#275C3C'" [margin]="'2'">
+        <qrcode [qrdata]="myAngularxQrCode" [width]="150" [errorCorrectionLevel]="'M'" [colorDark]="'#275C3C'" [margin]="'2'">
         </qrcode>
+    </div>
+    <div class="center" *ngIf="!myAngularxQrCode">
+        <app-progress-indeterminate></app-progress-indeterminate>
     </div>
     <br>
     <p class="center" style="color: #000000; margin: 0 15px 0 15px; text-align: center;">Faites scanner votre code pour
         tranférer le billet.</p>
     <p class="center">
-        <a href="" style="color: #275C3C; text-align: center;">Comment effectuer le scan ?</a>
+        <a href="https://yabain.com" target="_blank" style="color: #275C3C; text-align: center;">Comment effectuer le scan ?</a>
     </p>
     <div class="center">
-        <img width="100" src="../../../../../assets/icon/qr_code_scanner.png">
+        <img width="70" src="../../../../../assets/icon/qr_code_scanner.png">
     </div>
-    <br>
-    <p style="background-color: #eda539; color: #000000; border-radius: 15px;
-        margin: 0 15px 0 15px; padding: 10px 10px 10px 10px;">
+    <div class="ion-padding">
+    <p style="background-color: #eda539; color: #000000; border-radius: 10px;
+    padding: 10px 10px 10px 10px;">
         <b><u>NB: </u></b><br> Ce code est personnelle et donne droit à l'acquisition de votre billet.
-    </p><br><br><br><br>
+    </p>
+    <!-- for test -->
+    <ion-button expand="block" (click)="createQRCode()" class="center" *ngIf="myAngularxQrCode">
+        <ion-icon name="link-outline" style="margin-right: 3px;"></ion-icon> Copier le lien de partage
+     </ion-button>
+        <app-progress-indeterminate (click)="createQRCode()" class="center" *ngIf="!myAngularxQrCode"></app-progress-indeterminate>
+    <ion-item lines="none">
+        <ion-label><b>Data to Qr-Code: </b></ion-label>
+        <ion-input [(ngModel)]="textToCode" placeholder="chaine de caractères"></ion-input>
+    </ion-item></div>
+    <!-- /for test -->
+    <br><br><br><br>
 </ion-content>

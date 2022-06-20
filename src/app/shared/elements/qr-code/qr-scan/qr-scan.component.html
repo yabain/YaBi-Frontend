@@ -21,9 +21,10 @@
         <img width="50" src="../../../../../assets/icon/qr_scan_icon.png">
     </div>
     <div *ngIf="!showCamera">
+        Lancez le scanner de code pour recevoir un billet
         <ion-button expand="block" (click)="scanCode()">
             <ion-icon slot="start" name="qr-scanner"></ion-icon>
-            Scanner un QR-Code
+            Scanner le QR-Code
         </ion-button>
         <ion-item *ngIf="textScanned" lines="none">
             <ion-label>

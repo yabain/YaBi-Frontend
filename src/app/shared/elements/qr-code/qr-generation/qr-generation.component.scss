@@ -1,3 +1,16 @@
-ion-content{
-    --ion-background-color: white;
+ion-content {
+  --ion-background-color: white;
+  --ion-color: #010101;
+}
+
+ion-item {
+  --ion-item-background: #ffffff;
+  --ion-item-color: #275C3C;
+}
+
+ion-button {
+  text-transform: none;
+  --background: #275C3C;
+  --border-radius: 10px !important;
+  color: #fff;
 }

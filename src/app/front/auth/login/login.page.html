@@ -36,6 +36,10 @@
             </div>
           </form> -->
           <form [formGroup]="loginForm" (ngSubmit)="submit()" style="color: white;">
+            <div class="alert" *ngIf="error">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <strong>Erreur:</strong> {{errorMsg}}
+            </div>
             <ion-item>
               <ion-input type="email" id="email" formControlName="email" placeholder="Adresse Email"
                  [ngClass]="{ 'is-invalid': submitted && f.email.errors }"></ion-input>
@@ -55,10 +59,10 @@
 
             <div class="bottom-section">
               
-              <ion-button type="submit" (click)="submit()"  *ngIf="!waitingLogin" disabled>
-                <b><app-progress-indeterminate *ngIf="waitingLogin"></app-progress-indeterminate></b>
+              <ion-button type="submit" *ngIf="waitingLogin" disabled>
+                <app-progress-indeterminate></app-progress-indeterminate>
               </ion-button>
-              <ion-button type="submit" (click)="submit()"  *ngIf="!waitingLogin"><b> Se connecter </b></ion-button>
+              <ion-button type="submit" *ngIf="!waitingLogin"><b> Se connecter </b></ion-button>
               <span style="color: black;"> Pas de compte ? <a (click)="navigateToSignupPage()">Créer </a> maintenant</span>
             </div>
           </form>

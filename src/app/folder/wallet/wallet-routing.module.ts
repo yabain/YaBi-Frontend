@@ -7,6 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: WalletPage
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ];
 

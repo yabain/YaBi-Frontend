@@ -11,6 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { RouteReuseStrategy } from '@angular/router';
+import { ProgressIndeterminateModule } from '../progress-indeterminate/progress-indeterminate.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { RouteReuseStrategy } from '@angular/router';
     FormsModule,
     IonicModule,
     QrCodeRoutingModule,
-    QRCodeModule
+    QRCodeModule,
+    ProgressIndeterminateModule
   ],
   declarations: [
       QrGenerationComponent,

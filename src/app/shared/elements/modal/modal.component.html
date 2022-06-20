@@ -1,14 +1,13 @@
 <ion-header class="ion-no-border" style="padding-top: 5px; padding-bottom: 0px;margin-bottom: 0;">
     <ion-toolbar style="padding-left: 0px; padding-top: 5px;">
         <ion-buttons slot="start">
-            <i class="fa fa-arrow-left" style="color: #275C3C; font-size: 25px" type="cancel"
-                (click)="closeModal()"></i>
+            <img src="../../../assets/chevron-left.png" style="color: #275C3C; height: 35px" (click)="closeModal()">
         </ion-buttons>
         <ion-title style="color: #275C3C" class="center col col-center text-center"> {{modalTitle}}</ion-title>
-        <i slot="primary" type="submit" (click)="save();closeModal()" style="color: #275C3C; font-size: 25px"
-            class="fa fa-check"></i>
+        <ion-icon slot="primary" type="submit" name="checkmark-sharp" (click)="save();closeModal()" width="15px" style="color: black; font-size: 30px"></ion-icon>
+        <!-- <i slot="primary" type="submit" (click)="save();closeModal()" width="15px" style="color: black; font-size: 20px"
+            class="fa fa-check"></i> -->
     </ion-toolbar>
-
 </ion-header>
 <ion-content style="background-color: white; color: black;">
     <div style="background-color: white; color: black">

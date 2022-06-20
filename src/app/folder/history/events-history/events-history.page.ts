@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.page.html',
-  styleUrls: ['./history.page.scss'],
+  selector: 'app-events-history',
+  templateUrl: './events-history.page.html',
+  styleUrls: ['./events-history.page.scss'],
 })
-export class HistoryPage implements OnInit {
+export class EventsHistoryPage implements OnInit {
   title = 'Historique';
 
   constructor(private router: Router) { }
@@ -15,7 +15,7 @@ export class HistoryPage implements OnInit {
   }
 
   navigateToHomePage() {
-    this.router.navigate(['tabs/home']);
+    this.router.navigate(['folder/home']);
   }
 
 }

@@ -19,7 +19,9 @@ import { AuthService } from 'src/app/shared/services/user/auth/auth.service';
 export class SignupPage implements OnInit {
   submitted = false;
   registerForm: FormGroup;
-  registrationMessage = '';
+  error = false
+  errorMsg = '';
+  success = false;
   waitingRegistration = false;
   country: any = [];
   city: any = [];
@@ -55,6 +57,9 @@ export class SignupPage implements OnInit {
     //   validator: MustMatch('password', 'password2')
     // }
     );
+    this.waitingRegistration = false;
+    this.error = false;
+    this.success = false;
   }
   onSelect(country){
     this.city = this.location.city()
@@ -72,15 +77,19 @@ export class SignupPage implements OnInit {
   }
 
   submit() {
-    this.submitted = true;
     console.log('Reg form avant setform', this.registerForm);
+    this.error = false;
+    this.success = false;
+    this.waitingRegistration = false;
+    this.submitted = true;
 
     // stop here if form is invalid
     if (this.registerForm.invalid) {
-      this.submitted = false;
       return;
     }
-    // this.waitingRegistration = true;
+    this.submitted = true;
+    this.waitingRegistration = true;
+
     let user = new YUser();
 
     user.hydrate(this.registerForm.value);
@@ -96,36 +105,36 @@ export class SignupPage implements OnInit {
       user.country = 'RC'
     }
     console.log('user data: ', user);
-    this.registerService.register(user)
-      .then((result) => {
-        // this.setLocalstorageCurentUser(user);
-        localStorage.setItem('username', user.firstName.toString());
-        this.userProfile.setUser(user);
-        console.log('Good: Utilisateur enregistré!');
-        this.navigateToSigninPage();
-      })
-      .catch((error) => {
-        FirebaseError.handleApiError(error);
-        this.submitted = false;
-        console.error('Erreur: ', error);
-      });
+    // this.navigateToSigninPage();
+
+    this.success = true;
+    setTimeout(()=>{
+      this.waitingRegistration = false;
+      this.router.navigate(['auth/login']);
+      this.success = false;
+  }, 3000);
+    
+    // this.registerService.register(user)
+    //   .then((result) => {
+    //     localStorage.setItem('username', user.firstName.toString());
+    //     this.userProfile.setUser(user);
+    //       this.success = true;
+    //       setTimeout(()=>{
+    //         this.router.navigate(['auth/login']);
+    //         this.success = false;
+    //         this.waitingRegistration = false;
+    //     }, 4000);
+    //     console.log('Good: Utilisateur enregistré!');
+    //     this.submitted = false;
+    //   })
+    //   .catch((error) => {
+    //     FirebaseError.handleApiError(error);;
+    //     this.error = true;
+    //     this.errorMsg = error.message;
+    //     console.error('Erreur: ', error);
+    //     this.submitted = false;
+    //     this.waitingRegistration = false;
+    //   });
   }
 
-  // setLocalstorageCurentUser(user: YUser) {
-  //    this.authService.currentUserSubject.subscribe((user: User) => {
-  //     localStorage.setItem('username', user.firstName.toString());
-  //     localStorage.setItem('firstName', user.firstName.toString());
-  //     localStorage.setItem('lastName', user.firstName.toString());
-  //     localStorage.setItem('sexe', user.firstName.toString());
-  //     localStorage.setItem('email', user.firstName.toString());
-  //     localStorage.setItem('photoUrl', user.firstName.toString());
-  //     localStorage.setItem('city', user.firstName.toString());
-  //     localStorage.setItem('country', user.firstName.toString());
-  //     localStorage.setItem('about', user.firstName.toString());
-  //     localStorage.setItem('userType', user.firstName.toString());
-  //     localStorage.setItem('phoneNumber', user.firstName.toString());
-  //     localStorage.setItem('status', user.firstName.toString());
-  //     localStorage.setItem('bonus', user.firstName.toString());
-  //    });
-  // }
 }

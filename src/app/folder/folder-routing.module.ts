@@ -23,8 +23,7 @@ const routes: Routes = [
     path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
   },
   {
-    path: 'event-detail', loadChildren:
-    () => import('../shared/elements/event/event-detail/event-detail.module').then(m => m.EventDetailModule)
+    path: 'event-detail', loadChildren: () => import('../shared/elements/event/event-detail/event-detail.module').then(m => m.EventDetailModule)
   },
   {
     path: 'categories', loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesPageModule)
@@ -49,6 +48,9 @@ const routes: Routes = [
   },
   {
     path: 'about', loadChildren: () => import('../front/about/about.module').then(m => m.AboutPageModule)
+  },
+  {
+    path: 'my-events', loadChildren: () => import('./my-events/my-events.module').then(m => m.MyEventsModule)
   },
   {
     path: 'add-event', loadChildren: () => import('../shared/elements/event/add-event/add-event.module').then(m => m.AddEventPageModule)

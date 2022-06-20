@@ -1,3 +1,4 @@
+
 export class YEntityID
 {
     private _id:String;
@@ -18,7 +19,7 @@ export class YEntityID
     }
     
     setId(id:String)
-    {
+    { 
         this._id=id;
     }
 

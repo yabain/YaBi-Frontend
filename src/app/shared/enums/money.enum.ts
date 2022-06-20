@@ -1,5 +1,6 @@
 export enum YSetPriceType
 {
+    FREE="free",
     VIP="vip_price",
     NORMAL="normal_price",
     VVIP="vvip_price",
@@ -9,5 +10,6 @@ export enum YSetPriceType
 export enum YMoneyCode
 {
     XAF="xaf",
-    EUR="eur"
+    EUR="eur",
+    USD="usd"
 }

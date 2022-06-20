@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController, NavParams, PopoverController } from '@ionic/angular';
 import { PopComponent } from '../pop/pop.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-billet',
@@ -25,9 +26,9 @@ export class BilletComponent implements OnInit {
 
   constructor(
     private modalController: ModalController,
-    // eslint-disable-next-line @typescript-eslint/no-shadow
     public popoverController: PopoverController,
-    private navParams: NavParams
+    private navParams: NavParams,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -65,6 +66,9 @@ export class BilletComponent implements OnInit {
   }
 
   save() {
+  }
+  codeGenerator(){
+    this.router.navigate(['folder/qr-code/generation']);
   }
 
 }

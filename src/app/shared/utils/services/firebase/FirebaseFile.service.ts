@@ -46,7 +46,7 @@ export class FirebaseFile extends AbstractFirebase {
             break;
           case this.firebase.storage.TaskState.RUNNING:
             result.apiCode=ActionStatus.UPLOAD_RUNNING;
-            subject.next(result)
+            subject.next(result);
             break;
         }
       },

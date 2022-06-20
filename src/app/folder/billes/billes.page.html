@@ -1,11 +1,28 @@
-<app-title [title]="title"></app-title>
+<ion-header class="ion-no-border" style="padding-top: 0px; padding-bottom: 0px;margin-bottom: 0;">
+  <ion-toolbar style="padding-left: 0px; padding-top: 10px;">
+      <ion-buttons slot="start">
+          <img src="../../../assets/chevron-left.png" style="color: #275C3C; height: 35px" (click)="navigateToHomePage()">
+          <!-- <i class="fa fa-arrow-left" style="color: #275C3C; font-size: 25px" (click)="prviousPage()"></i> -->
+      </ion-buttons>
+      <ion-title style="color: #275C3C" class="center col col-center text-center"> {{title}}</ion-title>
+      <ion-buttons slot="primary" (click)="navigateToHistoryPage()">
+          <ion-button class="bordered" fill="solid" color="#275C3C" style="color: #275C3C">
+            <ion-icon name="timer-outline" style="margin-left: 3px"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
 
 <ion-content [fullscreen]="true">
 
   <div id="container">
 
     <div class="searchbar" style="padding-top: 0px; margin: 0; padding: 0px;">
-      <div class="" style="margin-top: 0px; padding-top: 0px; background-color: white !important;">
+      <div style="margin: 0px 3px 0px 3px; padding-top: 0px; background-color: white !important;">
+        <ion-button style="margin: 5px 5px 5px 5px;" expand="block" (click)="navigateToScan()">
+            Scanner un billet
+        </ion-button>
         <ion-item lines="none" class="prestige" (click)="openBille('Exprimer son potentiel', 'Utilisateur 1', 'Prestige')">
           <ion-grid>
             <ion-row class="ion-align-items-center">

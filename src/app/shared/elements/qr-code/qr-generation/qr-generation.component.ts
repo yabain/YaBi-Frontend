@@ -12,7 +12,11 @@ export class QrGenerationComponent implements OnInit {
   public textToCode: string;
   public myAngularxQrCode: string = null;
 
-  constructor() { }
+  constructor() {
+    if(this.myAngularxQrCode == null){
+      this.myAngularxQrCode = 'https://yabain.com';
+    }
+   }
 
   ngOnInit() {
   }

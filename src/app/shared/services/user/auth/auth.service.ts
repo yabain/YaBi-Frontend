@@ -67,7 +67,7 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       this.firebaseAuth.signInApi(user.email.toString(),user.password.toString())
       .then((result: ActionStatus<any>) => {
-        let userID: YEntityID=new YEntityID();
+        const userID: YEntityID=new YEntityID();
         userID.setId(result.result.user.uid)
         result.result=userID;
         this.setAuth({isLoggedIn:true});

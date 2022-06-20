@@ -7,7 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: BillesPage
-  }
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

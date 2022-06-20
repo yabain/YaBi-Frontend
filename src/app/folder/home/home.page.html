@@ -20,13 +20,13 @@
   </ion-toolbar>
 
 </ion-header>
-<ion-content style="padding-top: 0px; margin-top: 0px;">
+<ion-content style="margin: 0px 3px 0px 3px;padding-top: 0px">
   <div class="slides ion-margin-bottom" style="padding-top: 0px;">
 
     <p style="color: #275C3C; margin-left: 15px;margin-top: 0px; padding-bottom: 0px;padding-top: 3px; margin-bottom: 0px; font-family: Georgia, serif !important;"><b> A la une</b></p>
     <ion-slides [options]="slidesOptions">
-      <ion-slide class="bordered">
-        <ion-card style="background-color: white !important;" (click)="eventPage()">
+      <ion-slide>
+        <ion-card class="solde-content" (click)="eventPage()">
           <ion-card-header class="addit">
             <div>
               <div class="main">
@@ -56,7 +56,7 @@
       </ion-slide>
 
       <ion-slide>
-        <ion-card>
+        <ion-card class="solde-content">
           <ion-card-header class="addit">
             <div style="width: 100%;border-radius: 10px; height: 150px; background: url('../../../assets/event3.png');">
               <div class="main">
@@ -86,7 +86,7 @@
       </ion-slide>
 
       <ion-slide>
-        <ion-card>
+        <ion-card class="solde-content">
           <ion-card-header class="addit">
             <div style="width: 100%;border-radius: 10px; height: 150px; background: url('../../../assets/event2.png');">
               <div class="main">
@@ -116,7 +116,7 @@
       </ion-slide>
 
       <ion-slide>
-        <ion-card>
+        <ion-card class="solde-content">
           <ion-card-header class="addit">
             <div style="width: 100%;border-radius: 10px; height: 150px; background: url('../../../assets/event2.png');">
               <div class="main">
@@ -145,6 +145,15 @@
         </ion-card>
       </ion-slide>
 
+      <ion-slide>
+        <ion-card class="solde-content" style="width: 200px; margin-left: -25px;">
+          <ion-card-content class="ion-text-left">
+            <div style="color: #275C3C; margin: 0 0 0 -20px !important; width: 30px; height: 50px;">
+              <img src="../../../assets/chevron-right.png" alt="more"><br>
+              <img src="../../../assets/chevron-right.png" alt="more"></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
     </ion-slides>
   </div>
 

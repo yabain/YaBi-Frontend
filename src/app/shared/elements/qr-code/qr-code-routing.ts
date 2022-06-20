@@ -19,7 +19,7 @@ const routes: Routes = [
         component: QrGenerationComponent,
     },
     {
-      path: '',
+      path: '**',
       redirectTo: 'scan',
       pathMatch: 'full'
     },

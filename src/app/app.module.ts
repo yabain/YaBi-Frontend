@@ -7,6 +7,9 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProgressIndeterminateModule } from './shared/elements/progress-indeterminate/progress-indeterminate.module'
+import { BilletModule } from './shared/elements/billet/billet.module';
+import { RetraitModule } from './shared/elements/retrait/retrait.module';
+import { RechargeModule } from './shared/elements/recharge/recharge.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +18,11 @@ import { ProgressIndeterminateModule } from './shared/elements/progress-indeterm
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    ProgressIndeterminateModule],
+    ProgressIndeterminateModule,
+    BilletModule,
+    RetraitModule,
+    RechargeModule,
+  ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

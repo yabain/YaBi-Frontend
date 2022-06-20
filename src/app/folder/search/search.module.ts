@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { SearchPageRoutingModule } from './search-routing.module';
 
 import { SearchPage } from './search.page';
-import { TitleComponent } from '../../shared/elements/title/title.component';
+import { TitleComponent } from 'src/app/shared/elements/title/title.component';
+import { ProgressIndeterminateModule } from 'src/app/shared/elements/progress-indeterminate/progress-indeterminate.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SearchPageRoutingModule
+    SearchPageRoutingModule,
+    ProgressIndeterminateModule
   ],
   declarations: [SearchPage, TitleComponent]
 })

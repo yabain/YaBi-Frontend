@@ -1,8 +1,138 @@
-<app-title [title]="title"></app-title>
+<ion-header class="ion-no-border" style="padding-top: 0px; padding-bottom: 0px;margin-bottom: 0;">
+  <ion-toolbar style="padding-left: 0px; padding-top: 10px;">
+    <ion-buttons slot="start">
+      <img src="../../../assets/chevron-left.png" style="color: #275C3C; height: 35px" (click)="navigateToHomePage()">
+      <!-- <i class="fa fa-arrow-left" style="color: #275C3C; font-size: 25px" (click)="prviousPage()"></i> -->
+    </ion-buttons>
+    <ion-title style="color: #275C3C" class="center col col-center text-center"> {{title}}</ion-title>
+    <ion-buttons slot="primary" (click)="navigateToHistoryPage()">
+      <ion-button class="bordered" fill="solid" color="#275C3C" style="color: #275C3C">
+        <ion-icon name="timer-outline" style="margin-left: 3px"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
 
 <ion-content [fullscreen]="true">
 
   <div id="container">
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+      <!-- Wallet Card -->
+      <div class="section wallet-card-section pt-1" tabindex="-1" role="dialog">
+        <div class="solde-content modal-dialog">
+          <div class="wallet-card ">
+            <!-- Balance -->
+            <div class="balance">
+              <div class="left">
+                <span class="title">Solde Total</span>
+                <h1 class="total" style="font-size: 1.8em;">{{solde}}.00 <span style="font-size: 0.8em;"> FCFA</span>
+                </h1>
+              </div>
+            </div>
+            <!-- * Balance -->
+            <!-- Wallet Footer -->
+            <div class="wallet-footer">
+              <div class="item">
+                <a (click)="openRecharge()">
+                  <div class="icon-wrapper" style="background-color: #275C3C">
+                    <ion-icon name="log-in-outline"></ion-icon>
+                  </div>
+                  <strong>Recharge</strong>
+                </a>
+              </div>
+              <div class="item">
+                <a data-bs-toggle="modal" data-bs-target="#exchangeActionSheet">
+                  <div class="icon-wrapper btn-secondary" style="background-color: white;">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <!-- <ion-icon name="card-outline"></ion-icon> -->
+                  </div>
+                  <strong style="color: white;"></strong>
+                </a>
+              </div>
+              <div class="item">
+                <a data-bs-toggle="modal">
+                  <div class="icon-wrapper btn-warning" style="background-color: white">
+                    <ion-icon name="swap-vertical"></ion-icon>
+                  </div>
+                  <strong style="color: white;"></strong>
+                </a>
+              </div>
+              <div class="item">
+                <a (click)="openRetrait()" data-bs-toggle="modal" data-bs-target="#withdrawActionSheet">
+                  <div class="icon-wrapper" style="background-color: rgb(190, 45, 45)">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                  </div>
+                  <strong>Retrait</strong>
+                </a>
+              </div>
+
+            </div>
+            <!-- * Wallet Footer -->
+          </div>
+        </div>
+      </div>
+      <!-- Wallet Card -->
+      <br>
+      <br>
+      <label for="" style="color: #275C3C; margin-left: 25px; font-size: 1.5em;">Comptes</label>
+      <!-- Stats -->
+      <div class="section">
+        <div class="row mt-2">
+          <div class="col-6">
+            <div class="stat-box left">
+              <div class="title" style="font-size: 1.3em;">Orange Money</div>
+              <div class="value"><span style="font-size: 0.9em;">691 224 472</span></div>
+              <div class="title">Flambel SANOU</div>
+            </div>
+            <!-- <div class="right" style="background-color:black">
+                <a class="button" data-bs-toggle="modal" data-bs-target="#depositActionSheet">
+                    <ion-icon name="add-outline"></ion-icon>
+                </a>
+            </div> -->
+          </div>
+          <div class="col-6">
+            <div class="stat-box">
+              <div class="title">MTN Mobile Money</div>
+              <div class="value"><span style="font-size: 0.9em;">675 224 472</span></div>
+              <div class="title">Cédric NGUENDAP</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            <div class="stat-box">
+              <div class="title">PayPal</div>
+              <div class="value"><span style="font-size: 0.8em;"> 0000 0000 0000 0000</span></div>
+              <div class="title">Hussein MENKAM</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="stat-box">
+              <div class="title">Visa</div>
+              <div class="value"><span style="font-size: 0.8em;"> 0000 0000 0000 0000</span></div>
+              <div class="title">Hussein MENKAM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><br><br><br>
+    <!-- ========= JS Files =========  -->
+    <!-- Bootstrap -->
+    <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+
+    <script>
+      // Add to Home with 2 seconds delay.
+      AddtoHome("2000", "once");
+    </script>
 
   </div>
 
