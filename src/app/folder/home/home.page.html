@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border"style="padding-top: 5px; padding-button: 5px; margin-button: 0">
+<ion-header class="ion-no-border" style="padding-top: 5px; padding-button: 5px; margin-button: 0">
   <ion-toolbar style="padding-left: 3px;">
     <ion-item slot="start" lines="none" style="padding-top: 15px; border-radius: 15px;padding-left: 0px;">
 
@@ -9,21 +9,33 @@
         <p></p>
         <h3 style="color: black;font-family: Georgia, serif !important;">Utilisateur 1</h3>
       </ion-label>
-
     </ion-item>
-
     <ion-buttons slot="end"><br>
-      <ion-button (click)="navigateToNotificationsPage()" class="bordered" fill="solid" color="#275C3C" style="color: #275C3C">
+      <ion-button (click)="navigateToNotificationsPage()" class="bordered" fill="solid" color="#275C3C"
+        style="color: #275C3C">
         <img src="../../../assets/icon/icon_bell.png">
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-
 </ion-header>
+
 <ion-content style="margin: 0px 3px 0px 3px;padding-top: 0px">
   <div class="slides ion-margin-bottom" style="padding-top: 0px;">
-
-    <p style="color: #275C3C; margin-left: 15px;margin-top: 0px; padding-bottom: 0px;padding-top: 3px; margin-bottom: 0px; font-family: Georgia, serif !important;"><b> A la une</b></p>
+    <div class="alertWarning" *ngIf="profilIncomplet">
+      <strong>Profil incomplet! </strong> Pensez à compléter vos information de profil pour une expérience
+      personnalisée. <br>
+      <div id="countdown">
+        <div id="countdown-number"></div>
+        <svg>
+          <circle r="10" cx="20" cy="20"></circle>
+        </svg>
+      </div>
+      <a (click)="navigateToProfilPage()" class="center"> -> Compléter mon profil</a>
+    </div>
+    <p
+      style="color: #275C3C; margin-left: 15px;margin-top: 0px; padding-bottom: 0px;padding-top: 3px; margin-bottom: 0px; font-family: Georgia, serif !important;">
+      <b> A la une</b>
+    </p>
     <ion-slides [options]="slidesOptions">
       <ion-slide>
         <ion-card class="solde-content" (click)="eventPage()">
@@ -32,7 +44,7 @@
               <div class="main">
                 <img src="../../../assets/fecefoot.png">
               </div>
-            </div> 
+            </div>
           </ion-card-header>
           <ion-card-content class="ion-text-left">
             <h4><b>Match de gala: Canon Vs Toner</b></h4>
@@ -150,7 +162,8 @@
           <ion-card-content class="ion-text-left">
             <div style="color: #275C3C; margin: 0 0 0 -20px !important; width: 30px; height: 50px;">
               <img src="../../../assets/chevron-right.png" alt="more"><br>
-              <img src="../../../assets/chevron-right.png" alt="more"></div>
+              <img src="../../../assets/chevron-right.png" alt="more">
+            </div>
           </ion-card-content>
         </ion-card>
       </ion-slide>
@@ -160,7 +173,8 @@
 
 
   <div class="container" style="margin-top: 0px; padding-top: 0px;">
-    <h3 style="color: #275C3C; font-family: Georgia, serif !important; margin-left: 10px; font-size: 1em"><b> Événements </b></h3>
+    <h3 style="color: #275C3C; font-family: Georgia, serif !important; margin-left: 10px; font-size: 1em"><b> Événements
+      </b></h3>
     <ion-item lines="none">
       <ion-grid>
         <ion-row class="ion-align-items-center">
@@ -186,7 +200,7 @@
           </ion-col>
           <ion-col size="2">
             <ion-button color="light" fill="clear">
-              <ion-icon slot="icon-only" name="ellipsis-vertical" style="color: black;"></ion-icon> 
+              <ion-icon slot="icon-only" name="ellipsis-vertical" style="color: black;"></ion-icon>
             </ion-button>
           </ion-col>
         </ion-row>
@@ -217,7 +231,7 @@
           </ion-col>
           <ion-col size="2">
             <ion-button color="light" fill="clear">
-              <ion-icon slot="icon-only" name="ellipsis-vertical" style="color: black;"></ion-icon> 
+              <ion-icon slot="icon-only" name="ellipsis-vertical" style="color: black;"></ion-icon>
             </ion-button>
           </ion-col>
         </ion-row>
@@ -248,7 +262,7 @@
           </ion-col>
           <ion-col size="2">
             <ion-button color="light" fill="clear">
-              <ion-icon slot="icon-only" name="ellipsis-vertical" style="color: black;"></ion-icon> 
+              <ion-icon slot="icon-only" name="ellipsis-vertical" style="color: black;"></ion-icon>
             </ion-button>
           </ion-col>
         </ion-row>
@@ -279,7 +293,7 @@
           </ion-col>
           <ion-col size="2">
             <ion-button color="light" fill="clear">
-              <ion-icon slot="icon-only" name="ellipsis-vertical" style="color: black;"></ion-icon> 
+              <ion-icon slot="icon-only" name="ellipsis-vertical" style="color: black;"></ion-icon>
             </ion-button>
           </ion-col>
         </ion-row>

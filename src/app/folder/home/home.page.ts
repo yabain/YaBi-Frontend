@@ -7,16 +7,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  profilIncomplet = true;
+
+  slidesOptions = {
+    slidesPerView: 1.5
+  };
 
   constructor(
     private route: Router
   ) {
   }
-  slidesOptions = {
-    slidesPerView: 1.5
-  };
 
   ngOnInit() {
+    this.countDown();
+    if (this.profilIncomplet == true) {
+      setTimeout(() => {
+        this.profilIncomplet = false;
+      }, 10000);
+    }
   }
 
   eventPage() {
@@ -28,5 +36,8 @@ export class HomePage implements OnInit {
   }
   navigateToProfilPage() {
     this.route.navigate(['folder/profile']);
+  }
+
+  countDown() {
   }
 }

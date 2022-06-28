@@ -10,6 +10,8 @@ import { FirebaseError } from 'src/app/shared/utils/services/firebase';
 import { RegisterService } from 'src/app/shared/services/user/auth/register.service';
 import { AuthService } from 'src/app/shared/services/user/auth/auth.service';
 // import { MustMatch } from '../shared/services/MustMatch';
+import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +21,7 @@ import { AuthService } from 'src/app/shared/services/user/auth/auth.service';
 export class SignupPage implements OnInit {
   submitted = false;
   registerForm: FormGroup;
-  error = false
+  error = false;
   errorMsg = '';
   success = false;
   waitingRegistration = false;
@@ -33,7 +35,12 @@ export class SignupPage implements OnInit {
     private preferencesService: UserPreferenceService,
     private userProfile: YUserProfilService,
     private registerService: RegisterService,
-    private authService: AuthService, ) { 
+    private authService: AuthService,
+    langService: LanguageService,
+    translate: TranslateService,
+   ) {
+     translate.use(langService.getLanguage());
+
       if ( this.authService.isLoggedIn.getValue() == true){
         this.router.navigate(['folder']);
       }
@@ -53,6 +60,7 @@ export class SignupPage implements OnInit {
       // 'password2': new FormControl('', [Validators.required]),
       'email': new FormControl('', [Validators.required, Validators.email]),
     },
+    
     // {
     //   validator: MustMatch('password', 'password2')
     // }

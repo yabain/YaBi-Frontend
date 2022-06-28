@@ -8,6 +8,8 @@ import { YUser } from 'src/app/shared/entities/users';
 import { FirebaseError } from 'src/app/shared/utils/services/firebase';
 import { InputValidatorService } from 'src/app/shared/vaildators/input-validator/input-validator.service';
 import { AuthService } from 'src/app/shared/services/user/auth/auth.service';
+import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +30,13 @@ export class LoginPage implements OnInit {
     private userProfile: YUserProfilService,
     private loginService: LoginService,
     private sanitezeService: InputValidatorService,
-    private authService: AuthService,) {
+    private authService: AuthService,
+    langService: LanguageService,
+    translate: TranslateService,
+   ) {
+     translate.use(langService.getLanguage());
+     console.log('Venant du service: ', langService.getLanguage());
+
     if (this.authService.isLoggedIn.getValue() == true) {
       this.router.navigate(['folder']);
     }

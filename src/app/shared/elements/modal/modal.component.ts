@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
+import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-modal',
@@ -16,8 +18,12 @@ export class ModalComponent implements OnInit {
 
   constructor(
     private modalController: ModalController,
-    private navParams: NavParams
-  ) { }
+    private navParams: NavParams,
+    langService: LanguageService,
+    translate: TranslateService,
+   ) {
+     translate.use(langService.getLanguage());
+    }
 
   ngOnInit() {
     console.table(this.navParams);

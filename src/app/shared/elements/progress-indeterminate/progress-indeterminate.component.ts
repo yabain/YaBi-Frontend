@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-progress-indeterminate',
@@ -7,7 +9,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProgressIndeterminateComponent implements OnInit {
   @Input() message: String = '';
-  constructor() { }
+  constructor(
+    langService: LanguageService,
+    translate: TranslateService,
+   ) {
+     translate.use(langService.getLanguage()); }
 
   ngOnInit(): void {
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PopoverController } from '@ionic/angular';
 import { PopComponent } from 'src/app/shared/elements/pop/pop.component';
+import { NotificationService } from 'src/app/shared/services/notifications/notifications.service';
 
 @Component({
   selector: 'app-notifications',
@@ -13,7 +14,9 @@ export class NotificationsPage implements OnInit {
 
   constructor(
     public popoverController: PopoverController,
-    private router: Router) {}
+    private router: Router,
+    private notification: NotificationService) {
+    }
 
   async presentPopover(ev: any) {
     const popover = await this.popoverController.create({
@@ -29,6 +32,7 @@ export class NotificationsPage implements OnInit {
   }
 
   ngOnInit() {
+    this.notification.showNotification('top', 'center', 'danger', 'fa fa-close-circle', '\<b>Sorry !\</b>\<br>');
   }
 
   navigateToHomePage() {

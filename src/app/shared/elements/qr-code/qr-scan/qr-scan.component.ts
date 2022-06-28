@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 import { AlertController } from '@ionic/angular';
 import { Location } from '@angular/common';
+import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-qr-scan',
@@ -16,8 +18,11 @@ export class QrScanComponent implements OnInit {
   constructor(
     private qrScanner: QRScanner,
     private alertController: AlertController,
-    private location: Location
-  ) {
+    private location: Location,
+    langService: LanguageService,
+    translate: TranslateService,
+   ) {
+     translate.use(langService.getLanguage());
     this.scanCode();
     console.log(this.showCamera);
   }

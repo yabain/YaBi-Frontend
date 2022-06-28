@@ -43,7 +43,11 @@
               },
               {
                 "input": "node_modules/bootstrap-switch-button/css/bootstrap-switch-button.min.css"
+              },
+              {
+                "input": "node_modules/font-awesome/css/font-awesome.css"
               }
+              
             ],
             "scripts": [
               {
@@ -51,6 +55,9 @@
               },
               {
                 "input": "node_modules/bootstrap-switch-button/dist/bootstrap-switch-button.min.js"
+              },
+              {
+                "input": "node_modules/bootstrap-notify/bootstrap-notify.js"
               }
             ],
             "aot": false,
@@ -117,7 +124,10 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "styles": [],
+            "styles": [
+              "node_modules/font-awesome/css/font-awesome.css",
+              "src/global.scss"
+            ],
             "scripts": [],
             "assets": [
               {

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { BilletComponent } from '../../shared/elements/billet/billet.component';
+import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-billes',
@@ -13,8 +15,11 @@ export class BillesPage implements OnInit {
 
   constructor(
     private router: Router,
-    public billetController: ModalController
-  ) { }
+    public billetController: ModalController,
+    langService: LanguageService,
+    translate: TranslateService,
+   ) {
+     translate.use(langService.getLanguage()); }
 
   dataReturned: any;
 

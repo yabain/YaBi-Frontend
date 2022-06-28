@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PopoverController } from '@ionic/angular';
 import { PopComponent } from '../../pop/pop.component';
+import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-event-detail',
@@ -15,7 +17,12 @@ export class EventDetailPage implements OnInit {
     private router: Router,
 
     //for pop pop
-    public popoverController: PopoverController,) { }
+    public popoverController: PopoverController,
+    langService: LanguageService,
+    translate: TranslateService,
+   ) {
+     translate.use(langService.getLanguage());
+     }
 
   ngOnInit() {
   }

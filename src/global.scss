@@ -49,4 +49,10 @@ body{
   text-transform: none;
   // font-size: 20px;
 }
-
+.modal-backdrop {
+  z-index: -1 !important;
+}
+.modal-content {
+  margin: 2px auto;
+  z-index: 110 !important;
+}

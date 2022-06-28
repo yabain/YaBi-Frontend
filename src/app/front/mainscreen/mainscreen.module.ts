@@ -7,13 +7,32 @@ import { IonicModule } from '@ionic/angular';
 import { MainscreenPageRoutingModule } from './mainscreen-routing.module';
 
 import { MainscreenPage } from './mainscreen.page';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+
+// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
+export function createTranslateLoader(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
+}
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MainscreenPageRoutingModule
+    MainscreenPageRoutingModule,
+    IonicStorageModule.forRoot(),
+    HttpClientModule,
+    TranslateModule.forRoot({
+      // defaultLanguage: 'fr',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   declarations: [MainscreenPage]
 })

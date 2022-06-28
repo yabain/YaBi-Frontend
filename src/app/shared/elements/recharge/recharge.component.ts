@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ModalController, NavParams, PopoverController } from '@ionic/angular';
 import { PopComponent } from '../pop/pop.component';
 import { Router } from '@angular/router';
+import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-recharge',
@@ -29,7 +31,10 @@ export class RechargeComponent implements OnInit {
     public popoverController: PopoverController,
     private navParams: NavParams,
     private router: Router,
-  ) { }
+    langService: LanguageService,
+    translate: TranslateService,
+   ) {
+     translate.use(langService.getLanguage()); }
 
   ngOnInit() {
     console.table(this.navParams);

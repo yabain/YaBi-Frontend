@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-qr-generation',
@@ -12,7 +14,11 @@ export class QrGenerationComponent implements OnInit {
   public textToCode: string;
   public myAngularxQrCode: string = null;
 
-  constructor() {
+  constructor(
+    langService: LanguageService,
+    translate: TranslateService,
+   ) {
+     translate.use(langService.getLanguage());
     if(this.myAngularxQrCode == null){
       this.myAngularxQrCode = 'https://yabain.com';
     }

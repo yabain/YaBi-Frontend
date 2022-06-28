@@ -1,11 +1,26 @@
-<app-title [title]="title"></app-title>
+<ion-header class="ion-no-border" style="padding-top: 0px; padding-bottom: 0px;margin-bottom: 0;">
+    <ion-toolbar style="padding-left: 0px; padding-top: 10px;">
+        <ion-buttons slot="start">
+            <img src="../../../assets/chevron-left.png" style="color: #275C3C; height: 35px" (click)="prviousPage()">
+            <!-- <i class="fa fa-arrow-left" style="color: #275C3C; font-size: 25px" (click)="prviousPage()"></i> -->
+        </ion-buttons>
+        <ion-title style="color: #275C3C" class="center col col-center text-center"> {{'categories' | translate}}</ion-title>
+        <ion-buttons slot="primary" (click)="navigateToNotificationsPage()">
+            <ion-button class="bordered" fill="solid" color="#275C3C" style="color: #275C3C">
+                <ion-icon color="custom" name="notifications" style="color: aliceblue;"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
 
 <ion-content [fullscreen]="true">
     <div id="container">
         <ion-card class="img-concert bordered">
             <ion-card-header>
-                <ion-card-subtitle>Concerts / Ciné</ion-card-subtitle>
-                <ion-card-title class="concert"><i>Show biz</i></ion-card-title>
+                <ion-card-subtitle>
+                    <h3 class="subTitle">{{'concerts' | translate}} / {{'cine' | translate}}</h3>
+                </ion-card-subtitle>
+                <ion-card-title class="concert"><i>{{'showBiz' | translate}}</i></ion-card-title>
             </ion-card-header>
 
             <ion-card-content>
@@ -14,8 +29,10 @@
         </ion-card>
         <ion-card class="img-sport bordered">
             <ion-card-header>
-                <!-- <ion-card-subtitle>Vive le</ion-card-subtitle> -->
-                <ion-card-title class="sport"><i> Sport</i></ion-card-title>
+                <ion-card-subtitle>
+                    <h3 class="subTitle">{{'concerts' | translate}} / {{'cine' | translate}}</h3>
+                </ion-card-subtitle>
+                <ion-card-title class="sport"><i> {{'sport' | translate}}</i></ion-card-title>
             </ion-card-header>
 
             <ion-card-content>
@@ -24,8 +41,10 @@
         </ion-card>
         <ion-card class="img-fiesta bordered">
             <ion-card-header>
-                <!-- <ion-card-subtitle>Assister aux</ion-card-subtitle> -->
-                <ion-card-title class="fiesta"><i>Fiesta</i></ion-card-title>
+                <ion-card-subtitle class="subTitle">
+                    <h3>{{'concerts' | translate}} / {{'cine' | translate}}</h3>
+                </ion-card-subtitle>
+                <ion-card-title class="fiesta"><i>{{'fiesta' | translate}}</i></ion-card-title>
             </ion-card-header>
 
             <ion-card-content>
@@ -34,7 +53,9 @@
         </ion-card>
         <ion-card class="img-conferences bordered">
             <ion-card-header>
-                <!-- <ion-card-subtitle>Prendre part aux</ion-card-subtitle> -->
+                <ion-card-subtitle>
+                    <h3 class="subTitle">{{'concerts' | translate}} / {{'cine' | translate}}</h3>
+                </ion-card-subtitle>
                 <ion-card-title class="conferences"><i>Conférences</i></ion-card-title>
             </ion-card-header>
 

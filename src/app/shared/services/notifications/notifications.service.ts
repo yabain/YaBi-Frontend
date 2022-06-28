@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 
-declare var $: any;
+declare let $: any;
 
 @Injectable({
     providedIn: 'root'
 })
 export class NotificationService {
-    refresh: number = 1;
-    showNotificationWithoutTimer(from, align, colortype, icon, text, time?: number)
+    refresh = 1;
+    showNotification(from, align, colortype, icon, text, time?: number)
     {
         if (!time) {
             time = 3000;
@@ -25,16 +25,14 @@ export class NotificationService {
         });
     }
 
-    showNotification(from, align, colortype, icon, text, time?: number) {
+    showNotificationWithRefresh(from, align, colortype, icon, text, time?: number) {
         if (!time) {
             time = 3000;
         }
-        this.showNotificationWithoutTimer(from, align, colortype, icon, text, time);
-       if(time && time>0) 
+        this.showNotification(from, align, colortype, icon, text, time);
+       if(time && time > 0)
        {
-        setTimeout(() => {
-            return this.refreshFonct();
-        }, time);
+        setTimeout(() => this.refreshFonct(), time);
        }
 
     }

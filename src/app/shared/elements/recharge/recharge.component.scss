@@ -1,3 +1,17 @@
+
+body {
+  @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #05a30b;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #1c1c1c;
+  display: flex;
+  justify-content: center;
+}
+
 :root {
   --ion-safe-area-top: 20px;
   --ion-safe-area-bottom: 22px;
@@ -54,18 +68,6 @@ body {
   margin: 0;
 }
 
-body {
-  @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
-  font-family: 'Ubuntu', sans-serif;
-  background-color: #05a30b;
-  height: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #1c1c1c;
-  display: flex;
-  justify-content: center;
-}
 
 
 .ticket-system {

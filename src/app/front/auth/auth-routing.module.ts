@@ -7,7 +7,8 @@ import { SignupPage } from './signup/signup.page';
 const routes: Routes = [
   {
     path:'',
-    redirectTo: 'login'
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
    {
      path: 'login',

@@ -127,14 +127,6 @@ export class LocationService {
       //Congo
       {
         id: 2,
-        name: 'Libreville'
-      },
-      {
-        id: 2,
-        name: 'Libreville'
-      },
-      {
-        id: 2,
         name: 'Bandundu'
       },
       {
