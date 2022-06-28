@@ -28,7 +28,7 @@ export class LanguageService {
 
         // eslint-disable-next-line no-cond-assign
         if (!this.userLanguage) {
-            this.userLanguage = 'fr';
+            this.userLanguage = 'en';
         }
         else {
             // const phoneLanguage = 'fr';  // remplacer 'fr' par une fontion qui récupère la langue par défaut du téléphone

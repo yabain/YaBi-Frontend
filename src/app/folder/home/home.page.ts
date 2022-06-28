@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +16,12 @@ export class HomePage implements OnInit {
   };
 
   constructor(
-    private route: Router
+    private route: Router,
+    langService: LanguageService,
+    translate: TranslateService,
   ) {
+    translate.use(langService.getLanguage());
+
   }
 
   ngOnInit() {

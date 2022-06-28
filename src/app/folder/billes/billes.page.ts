@@ -18,9 +18,11 @@ export class BillesPage implements OnInit {
     public billetController: ModalController,
     langService: LanguageService,
     translate: TranslateService,
-   ) {
-     translate.use(langService.getLanguage()); }
+  ) {
+    translate.use(langService.getLanguage());
+  }
 
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   dataReturned: any;
 
   async openBille(
@@ -35,7 +37,7 @@ export class BillesPage implements OnInit {
     country?,
     organiser?,
     owner?
-    ) {
+  ) {
     // if (value == 'userName'){
     //   value = this.userName ;
     // } else if (value == 'country'){
@@ -77,11 +79,11 @@ export class BillesPage implements OnInit {
 
   ngOnInit() {
   }
-  
-  navigateToScan(){
+
+  navigateToScan() {
     this.router.navigate(['folder/qr-code/scan']);
   }
-  navigateToHistoryPage(){
+  navigateToHistoryPage() {
     this.router.navigate(['folder/history/billets']);
   }
   navigateToHomePage() {

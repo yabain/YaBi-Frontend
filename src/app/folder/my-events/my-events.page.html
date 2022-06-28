@@ -1,5 +1,18 @@
-<app-title [title]="title"></app-title>
-
+<ion-header class="ion-no-border" style="padding-top: 0px; padding-bottom: 0px;margin-bottom: 0;">
+    <ion-toolbar style="padding-left: 0px; padding-top: 10px;">
+        <ion-buttons slot="start">
+            <img src="../../../assets/chevron-left.png" style="color: #275C3C; height: 35px" (click)="navigateToHomePage()">
+            <!-- <i class="fa fa-arrow-left" style="color: #275C3C; font-size: 25px" (click)="prviousPage()"></i> -->
+        </ion-buttons>
+        <ion-title style="color: #275C3C" class="center col col-center text-center"> {{'myEvents' | translate}}</ion-title>
+        <ion-buttons slot="primary" (click)="navigateToHistoryPage()">
+            <ion-button class="bordered" fill="solid" color="#275C3C" style="color: #275C3C">
+              <ion-icon name="timer-outline" style="margin-left: 3px"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+  
 <ion-content [fullscreen]="true">
 
  <div id="container"> 

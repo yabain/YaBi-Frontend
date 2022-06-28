@@ -1,12 +1,26 @@
-<app-title [title]="title"></app-title>
+<ion-header class="ion-no-border" style="padding-top: 0px; padding-bottom: 0px;margin-bottom: 0;">
+    <ion-toolbar style="padding-left: 0px; padding-top: 10px;">
+        <ion-buttons slot="start">
+            <img src="../../../assets/chevron-left.png" style="color: #275C3C; height: 35px"
+                (click)="navigateToHomePage()">
+            <!-- <i class="fa fa-arrow-left" style="color: #275C3C; font-size: 25px" (click)="prviousPage()"></i> -->
+        </ion-buttons>
+        <ion-title style="color: #275C3C" class="center col col-center text-center"> {{'addEvent' | translate}}
+        </ion-title>
+        <ion-buttons slot="primary" (click)="navigateToHistoryPage()">
+            <ion-button class="bordered" fill="solid" color="#275C3C" style="color: #275C3C">
+                <ion-icon name="timer-outline" style="margin-left: 3px"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
 
 <ion-content [fullscreen]="true">
-
     <div id="container">
         <ion-card class="img-add-event bordered">
             <ion-card-header>
                 <!-- <ion-card-subtitle>Assister aux</ion-card-subtitle> -->
-                <ion-card-title class="add-event"><i>Profil</i></ion-card-title>
+                <ion-card-title class="add-event"><i>{{'profile' | translate}}</i></ion-card-title>
             </ion-card-header>
 
             <ion-card-content>
@@ -19,38 +33,38 @@
             <div class="custom-control custom-radio">
                 <input style="margin-left: 15px; margin-right: 10px;" type="radio" id="customRadio1" name="customRadio"
                     class="custom-control-input">
-                <label class="custom-control-label" for="customRadio1">Évènement publique</label>
+                <label class="custom-control-label" for="customRadio1">{{'publicEvent' | translate}}</label>
             </div>
             <div class="custom-control custom-radio">
                 <input style="margin-left: 15px; margin-right: 10px;" type="radio" id="customRadio2" name="customRadio"
                     class="custom-control-input">
-                <label class="custom-control-label" for="customRadio2">Évènement privé</label>
+                <label class="custom-control-label" for="customRadio2">{{'privatEvent' | translate}}</label>
             </div>
         </fieldset>
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label for="categorie">Catégorie</label>
+                <label for="categorie">{{'categorie' | translate}}</label>
                 <select id="categorie" class="form-control">
-                    <option selected>Sport</option>
-                    <option>Conférence</option>
-                    <option>Fiesta</option>
-                    <option>Concert</option>
+                    <option selected>{{'sport' | translate}}</option>
+                    <option>{{'conference' | translate}}</option>
+                    <option>{{'fiesta' | translate}}</option>
+                    <option>{{'concert' | translate}}</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
-                <label for="titre">Titre</label>
-                <input type="text" class="form-control" id="titre" placeholder="Nom de l'évènement">
+                <label for="titre">{{'title' | translate}}</label>
+                <input type="text" class="form-control" id="titre" placeholder="{{'eventName' | translate}}">
             </div>
             <div class="form-group col-md-6">
-                <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" placeholder="A propos de l'évènement">
+                <label for="description">{{'description' | translate}}</label>
+                <input type="text" class="form-control" id="description" placeholder="{{'aboutEvent' | translate}}">
             </div><br>
-            <span style="margin-left: 15px; color: #275C3C; font-size: 1.5em;"> Dates</span>
+            <span style="margin-left: 15px; color: #275C3C; font-size: 1.5em;"> {{'date' | translate}}</span>
             <div class='col-sm-6'>
-                <label for="date" style="margin-left: auto !important;">Début</label>
+                <label for="date" style="margin-left: auto !important;">{{'start' | translate}}</label>
                 <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
-                        <input type='date' class="form-control" id="date" placeholder="jj/mm/aaaa" />
+                        <input type='date' class="form-control" id="date" placeholder="{{'dmy' | translate}}" />
                         <span class="input-group-addon" for="date">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -58,7 +72,7 @@
                 </div>
             </div>
             <div class='col-sm-6'>
-                <label for="date">Heure</label>
+                <label for="date">{{'houre' | translate}}</label>
                 <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
                         <input type='time' class="form-control" id="date" placeholder="hh:mm" />
@@ -69,7 +83,7 @@
                 </div>
             </div>
             <div class='col-sm-6'>
-                <label for="date">Fin</label>
+                <label for="date">{{'end' | translate}}</label>
                 <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
                         <input type='date' class="form-control" id="date" placeholder="jj/mm/aaaa" />
@@ -80,7 +94,7 @@
                 </div>
             </div>
             <div class='col-sm-6'>
-                <label for="date">Heure</label>
+                <label for="date">{{'houre' | translate}}</label>
                 <div class="form-group">
                     <div class='input-group date' id='datetimepicker1'>
                         <input type='time' class="form-control" id="date" placeholder="hh:mm" />
@@ -90,15 +104,15 @@
                     </div>
                 </div>
             </div><br>
-            <span style="margin-left: 15px; color: #275C3C; font-size: 1.5em;"> Lieu</span>
+            <span style="margin-left: 15px; color: #275C3C; font-size: 1.5em;"> {{'zone' | translate}}</span>
             <div class="form-group col-md-6">
-                <label for="pays">Pays</label>
+                <label for="pays">{{'country' | translate}}</label>
                 <select id="pays" class="form-control">
-                    <option selected>Cameroun</option>
+                    <option selected>{{'cameroon' | translate}}</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
-                <label for="city">Ville</label>
+                <label for="city">{{'city' | translate}}</label>
                 <select id="city" class="form-control">
                     <option>Bafang</option>
                     <option>Bafia</option>
@@ -123,24 +137,25 @@
                 </select>
             </div>
             <div class="form-group col-md-4">
-                <label for="place">Lieux</label>
+                <label for="place">{{'zone' | translate}}</label>
                 <input type="text" class="form-control" id="place">
             </div>
             <br>
 
-            <span style="margin-left: 15px; color: #275C3C; font-size: 1.5em;"> Type de billets</span>
+            <span style="margin-left: 15px; color: #275C3C; font-size: 1.5em;"> {{'typeTicket' | translate}}</span>
             <ul class="nav nav-tabs">
-                <li><a data-toggle="tab" href="#free" style="color: #42574a;">Gratuit</a></li>
-                <li class="active"><a data-toggle="tab" href="#simple" style="color: #42574a;">Uniformes</a></li>
-                <li><a data-toggle="tab" href="#graduel" style="color: #42574a;">Graduels</a></li>
+                <li><a data-toggle="tab" href="#free" style="color: #42574a;"> {{'free' | translate}}</a></li>
+                <li class="active"><a data-toggle="tab" href="#simple" style="color: #42574a;"> {{'uniform' | translate}}</a></li>
+                <li><a data-toggle="tab" href="#graduel" style="color: #42574a;"> {{'graduatesTicket' | translate}}</a>
+                </li>
             </ul>
 
             <div class="form-group col-md-4">
                 <div class="tab-content">
                     <div id="simple" class="tab-pane fade in active">
-                        <h3>Billets uniformes</h3>
-                        <p>Toutes les invitations sont de même valeur.</p>
-                        <label for="place">Valeur du pass</label>
+                        <h3>{{'uniformTicket' | translate}}</h3>
+                        <p>{{'uniformTicketMsg' | translate}}</p>
+                        <label for="place">{{'ticketValue' | translate}}</label>
                         <div class='input-group date col-md-4' id='datetimepicker1'>
                             <input type='number' class="form-control" id="date" placeholder="1 500" />
                             <span class="input-group-addon" for="date">
@@ -150,24 +165,24 @@
                         <div class='input-group date col-md-4' id='datetimepicker1'>
                             <input type='number' class="form-control" id="date" placeholder="100" />
                             <span class="input-group-addon" for="date">
-                                Places
+                                {{'places' | translate}}
                             </span>
                         </div>
                         <br>
                         <div class="form-check">
                             <ion-toggle color="success" id="unifRemb" style="padding-bottom: 0px;"></ion-toggle>
                             <label class="form-check-label" for="unifRemb" style="margin-left: 0px;">
-                                Billet Remboursable
+                                {{'returnableTicket' | translate}}
                             </label><br>
-                            En cochant cette case vous acceptez le retour des billets et leur remboursement jusqu'à <b>1 heure</b> avant le début de votre évènement.
+                            {{'returnableTicketMsg' | translate}}
                         </div>
                     </div>
                     <div id="graduel" class="tab-pane fade">
-                        <h3>Billets Graduel</h3>
+                        <h3>{{'graduatesTicket' | translate}}</h3>
                         <!-- <p>Les invitations sont échell.</p> -->
                         <br>
                         <ion-toggle color="success" id="classicChk" style="padding-bottom: 0px;" checked></ion-toggle>
-                        <label for="classic" style="margin-left: 10px;">Pass CLASSIQUE</label>
+                        <label for="classic" style="margin-left: 10px;">{{'classic' | translate}}</label>
                         <div class='input-group date col-md-4' id='datetimepicker1'>
                             <input type='number' class="form-control" id="date" placeholder="1500" />
                             <span class="input-group-addon" for="date">
@@ -177,27 +192,26 @@
                         <div class='input-group date col-md-4' id='datetimepicker1'>
                             <input type='number' class="form-control" id="date" placeholder="100" />
                             <span class="input-group-addon" for="date">
-                                Places
+                                {{'places' | translate}}
                             </span>
                         </div>
                         <br>
                         <ion-toggle color="success" id="vipchk" style="padding-bottom: 0px;" checked></ion-toggle>
-                        <label for="vipchk" style="margin-left: 10px;">Pass VIP</label>
+                        <label for="vipchk" style="margin-left: 10px;">{{'vip' | translate}}</label>
                         <div class='input-group date col-md-4' id='datetimepicker1'>
                             <input type='number' class="form-control" id="date" placeholder="5000" />
                             <span class="input-group-addon" for="date">
                                 FCFA
                             </span>
                         </div>
-                        
                         <div class='input-group date col-md-4' id='datetimepicker1'>
                             <input type='number' class="form-control" id="date" placeholder="100" />
                             <span class="input-group-addon" for="date">
-                                Places
+                                {{'places' | translate}}
                             </span>
                         </div><br>
                         <ion-toggle color="success" id="prestigeChk" style="padding-bottom: 0px;" checked></ion-toggle>
-                        <label for="prestigeChk" style="margin-left: 10px;">Pass PRESTIGE</label>
+                        <label for="prestigeChk" style="margin-left: 10px;">{{'prestige' | translate}}</label>
                         <div class='input-group date col-md-4' id='datetimepicker1'>
                             <input type='number' class="form-control" id="date" placeholder="10000" />
                             <span class="input-group-addon" for="date">
@@ -207,29 +221,30 @@
                         <div class='input-group date col-md-4' id='datetimepicker1'>
                             <input type='number' class="form-control" id="date" placeholder="100" />
                             <span class="input-group-addon" for="date">
-                                Places
+                                {{'places' | translate}}
                             </span>
                         </div><br>
                         <div class="form-check">
                             <ion-toggle color="success" id="gradRemb" style="padding-bottom: 0px;"></ion-toggle>
                             <label class="form-check-label" for="gradRemb" style="margin-left: 10px;">
-                                Billet Remboursable
+                                {{'returnableTicket' | translate}}
                             </label><br>
-                            En cochant cette case vous acceptez le retour des billets et leur remboursement jusqu'à <b>1 heure</b> avant le début de votre évènement.
+                            {{'returnableTicketMsg' | translate}}
                         </div>
                     </div>
                     <div id="free" class="tab-pane fade">
-                        <h3>Billets Gratuit</h3>
-                        <p>Les participants aacèderons gratuitement aux invitation dans la mesure du disponible</p>
+                        <h3>{{'freeTicket' | translate}}</h3>
+                        <p>{{'freeTicketMsg' | translate}}</p>
                         <div class='input-group date col-md-4' id='datetimepicker1'>
                             <input type='number' class="form-control" id="date" placeholder="100" />
                             <span class="input-group-addon" for="date">
-                                Places
+                                {{'places' | translate}}
                             </span>
-                        </div> 
+                        </div>
                     </div>
                     <br>
-                    <button (click)="submit()" type="submit" class="btn btn-success center"><b> Soumettre l'évent </b></button>
+                    <button (click)="submit()" type="submit" class="btn btn-success center"><b> {{'createEvent' |
+                            translate}} </b></button>
                 </div>
             </div>
             <!-- <div class="form-group col-md-2">

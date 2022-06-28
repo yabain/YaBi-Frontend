@@ -16,9 +16,9 @@
                 <ion-content>
                     <ion-list>
                         <!-- <ion-list-header style="color: rgba(111, 110, 110, 0.951);"><b> More</b></ion-list-header> -->
-                        <ion-item (click)="largeModal.show()"><b> Transférer le billet</b></ion-item>
-                        <ion-item (click)="navigateToCodeGenerator();"><b> Imprimer vers PDF</b></ion-item>
-                        <ion-item><b> Retourner au vendeur</b></ion-item>
+                        <ion-item (click)="largeModal.show()"><b> {{'sendTicket' | translate}}</b></ion-item>
+                        <ion-item (click)="navigateToCodeGenerator();"><b> {{'printPDF' | translate}}</b></ion-item>
+                        <ion-item><b> {{'return' | translate}}</b></ion-item>
                         <!-- <ion-item lines="none" detail="false" onClick="dismissPopover()">Fermer</ion-item> -->
                     </ion-list>
                 </ion-content>
@@ -56,7 +56,7 @@
                             </div><br>
                             <div class="details">
                                 <div class="item">
-                                    <span>N<sup><u>o</u></sup> du ticket</span>
+                                    <span>{{'numTicket' | translate}}</span>
                                     <h3>ESP69 </h3>
                                 </div>
                                 <div class="item">
@@ -64,35 +64,35 @@
                                     <h3>US6969</h3>
                                 </div>
                                 <div class="item">
-                                    <span>Utilisateur</span>
+                                    <span>{{'user' | translate}}</span>
                                     <h3>{{billetOwner}}</h3>
                                 </div>
                                 <div class="item">
-                                    <span>Début</span>
+                                    <span>{{'start' | translate}}</span>
                                     <h3>08/26/2018 15:33</h3>
                                 </div>
                                 <div class="item">
-                                    <span>Fin</span>
+                                    <span>{{'end' | translate}}</span>
                                     <h3>08/26/2018 15:33</h3>
                                 </div>
                                 <div class="item">
-                                    <span>Pays</span>
+                                    <span>{{'country' | translate}}</span>
                                     <h5>Cameroun</h5>
                                 </div>
                                 <div class="item">
-                                    <span>Ville</span>
+                                    <span>{{'city' | translate}}</span>
                                     <h5>Bangangté </h5>
                                 </div>
                                 <div class="item">
-                                    <span>Lieu</span>
+                                    <span>{{'zone' | translate}}</span>
                                     <h4>Maison du parti, RDPC</h4>
                                 </div>
                                 <div class="item">
-                                    <span>Valleur</span>
+                                    <span>{{'value' | translate}}Valleur</span>
                                     <h5>Billet non remboursable</h5>
                                 </div>
                                 <div class="item">
-                                    <span>Par</span>
+                                    <span>{{'by' | translate}}</span>
                                     <h3>Yaba-In</h3>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@
                                 </svg></div>
                             <div class="description" style="color: black;">
                                 <h3>Pass Code</h3>
-                                <p>QR-Code d'entrée.</p>
+                                <p>{{'qrEnter' | translate}}</p>
                             </div>
                         </div>
                     </div>
@@ -156,14 +156,13 @@
                         <div class="center">
                             <img src="../../../../assets/key2.jpg" style="height: 50px">
                         </div>
-                        <h4 class="modal-title center" style="color: #275C3C; font-size: 1.5em; margin-bottom: 8px">Clé
-                            de sécurité</h4>
+                        <h4 class="modal-title center" style="color: #275C3C; font-size: 1.5em; margin-bottom: 8px">
+                            {{'securityKey' | translate}}</h4>
                         <p style="text-align: justify;">
                             <!-- <ion-icon name="document-lock-outline" style="color: #275C3C; height: 25px; width: 30px">
                         </ion-icon> -->
-                            Opéartion nécessitant votre confirmation. Veuillez entrer votre clé à 4 chiffres.
-                            Par défaut, la clé est 0000. Vous pouvez la modifier à tout moment <a
-                                routerLink="/folder/profile"> -> ici.</a>
+                        {{'securityKeyMsg' | translate}}<a
+                                routerLink="/folder/profile"> -> {{'here' | translate}}</a>
                         </p>
                         <p class="center">
                         <input type="password" maxlength="1" size="1" placeholder="0" name="num1" id="num1"
@@ -198,9 +197,9 @@
                     <div class="modal-footer center">
                         <button type="button" class="btn btn-danger"
                             style="background-color: #8b1e1e; margin-right: 20px"
-                            (click)="largeModal.hide()">Annuler</button>
+                            (click)="largeModal.hide()">{{'cancel' | translate}}</button>
                         <button type="submit" class="btn btn-success"
-                            style="background-color: #275C3C; margin-left: 20px">Confirmer</button>
+                            style="background-color: #275C3C; margin-left: 20px">{{'confirm' | translate}}</button>
                     </div>
                 </form>
             </div><!-- /.modal-content -->

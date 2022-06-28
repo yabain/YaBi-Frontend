@@ -22,19 +22,18 @@
 <ion-content style="margin: 0px 3px 0px 3px;padding-top: 0px">
   <div class="slides ion-margin-bottom" style="padding-top: 0px;">
     <div class="alertWarning" *ngIf="profilIncomplet">
-      <strong>Profil incomplet! </strong> Pensez à compléter vos information de profil pour une expérience
-      personnalisée. <br>
+      <strong>{{'incompletProfil' | translate}}! </strong> {{'completAccountMsg' | translate}} <br>
       <div id="countdown">
         <div id="countdown-number"></div>
         <svg>
           <circle r="10" cx="20" cy="20"></circle>
         </svg>
       </div>
-      <a (click)="navigateToProfilPage()" class="center"> -> Compléter mon profil</a>
+      <a (click)="navigateToProfilPage()" class="center"> -> {{'completAccount | translate}}.</a>
     </div>
     <p
       style="color: #275C3C; margin-left: 15px;margin-top: 0px; padding-bottom: 0px;padding-top: 3px; margin-bottom: 0px; font-family: Georgia, serif !important;">
-      <b> A la une</b>
+      <b> {{'headlines' | translate}}</b>
     </p>
     <ion-slides [options]="slidesOptions">
       <ion-slide>
@@ -173,7 +172,7 @@
 
 
   <div class="container" style="margin-top: 0px; padding-top: 0px;">
-    <h3 style="color: #275C3C; font-family: Georgia, serif !important; margin-left: 10px; font-size: 1em"><b> Événements
+    <h3 style="color: #275C3C; font-family: Georgia, serif !important; margin-left: 10px; font-size: 1em"><b> {{'events' | translate}}
       </b></h3>
     <ion-item lines="none">
       <ion-grid>

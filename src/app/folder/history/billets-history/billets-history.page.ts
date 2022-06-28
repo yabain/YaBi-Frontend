@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-billets-history',
@@ -9,7 +11,11 @@ import { Router } from '@angular/router';
 export class BilletsHistoryPage implements OnInit {
   title = 'Historique';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    langService: LanguageService,
+    translate: TranslateService,
+  ) {
+    translate.use(langService.getLanguage()); }
 
   ngOnInit() {
   }

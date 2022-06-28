@@ -105,7 +105,7 @@
                     </div>
                     <div class="item__logout" (click)="navigateToLoginPage()">
                         <img src="../../../assets/log-out.png" alt="log-out">
-                        <span>Déconnexion</span>
+                        <span>{{'logout' | translate}}</span>
                         <div class="icon">
                             <img class="logout" src="../../../assets/chevron-right.png" alt="more">
                         </div>
@@ -143,8 +143,8 @@
                                 <select id="theme" class="form-control"
                                 formControlName="theme" [ngClass]="{ 'is-invalid': submitted && f.theme.errors }">
                                     <!-- <option selected>Default</option> -->
-                                    <option value="light"> Light <ion-icon name="sunny-outline"></ion-icon></option>
-                                    <option value="dark"> Dark <ion-icon name="moon-outline"></ion-icon></option>
+                                    <option value="light"> {{'light' | translate}} <ion-icon name="sunny-outline"></ion-icon></option>
+                                    <option value="dark"> {{'dark' | translate}} <ion-icon name="moon-outline"></ion-icon></option>
                                 </select>
                             </div>
                             <div *ngIf="submitted && f.theme.errors" class="invalid-feedback text-danger">

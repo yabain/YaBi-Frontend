@@ -5,7 +5,7 @@
                 (click)="closeCamera();prviousPage()">
             <!-- <i class="fa fa-arrow-left" style="color: #275C3C; font-size: 25px" (click)="prviousPage()"></i> -->
         </ion-buttons>
-        <ion-title style="color: #275C3C" class="center col col-center text-center"> {{title}}</ion-title>
+        <ion-title style="color: #275C3C" class="center col col-center text-center">{{'scan' | translate}}</ion-title>
         <ion-buttons slot="primary" (click)="navigateToNotificationsPage()">
             <ion-button class="bordered" fill="solid" color="#275C3C" style="color: #275C3C">
                 <ion-icon color="custom" name="notifications" style="color: aliceblue;"></ion-icon>
@@ -21,10 +21,10 @@
         <img width="50" src="../../../../../assets/icon/qr_scan_icon.png">
     </div>
     <div *ngIf="!showCamera">
-        Lancez le scanner de code pour recevoir un billet
+        {{'scanMsg' | translate}}
         <ion-button expand="block" (click)="scanCode()">
             <ion-icon slot="start" name="qr-scanner"></ion-icon>
-            Scanner le QR-Code
+            {{'scanQr' | translate}}
         </ion-button>
         <ion-item *ngIf="textScanned" lines="none">
             <ion-label>

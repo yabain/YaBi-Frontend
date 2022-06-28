@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-events',
@@ -9,7 +11,12 @@ import { Router } from '@angular/router';
 export class MyEventsPage implements OnInit {
   title = 'Mes events';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    langService: LanguageService,
+    translate: TranslateService,
+  ) {
+    translate.use(langService.getLanguage());
+  }
 
   ngOnInit() {
   }

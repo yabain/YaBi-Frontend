@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Plugins, StatusBarBackgroundColorOptions, StatusBarStyle } from '@capacitor/core';
 import { Platform } from '@ionic/angular';
@@ -14,7 +14,7 @@ import { LanguageService } from './shared/services/user/language/language.servic
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   textDir: String = 'ltr';
   public appPages = [
     { title: 'categories', url: 'folder/categories', icon: 'albums', labels: 'Catégorie' },
@@ -33,10 +33,9 @@ export class AppComponent {
     private router: Router,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
-    langService: LanguageService,
-    translate: TranslateService,
+    public langService: LanguageService,
+    public translate: TranslateService,
    ) {
-     translate.use(langService.getLanguage());
     // translate.setDefaultLang('fr') ;
     // this.langService.initLanguage();
     // this.ionViewWillEnter();
@@ -53,6 +52,11 @@ export class AppComponent {
         this.textDir = event.lang == 'ar'? 'rtl' : 'ltr';
       });
     });
+  }
+
+  ngOnInit(){
+    this.translate.use(this.langService.getLanguage());
+    console.log('111 Venant du service: ', this.langService.getLanguage());
   }
 
   // ionViewWillEnter() {
