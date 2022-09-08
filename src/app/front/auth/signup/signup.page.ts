@@ -145,4 +145,7 @@ export class SignupPage implements OnInit {
     //   });
   }
 
+  navigateToPrivacyPage() {
+    this.router.navigate(['privacy']);
+  }
 }

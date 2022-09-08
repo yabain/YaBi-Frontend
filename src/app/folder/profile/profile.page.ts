@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalComponent } from '../../shared/elements/modal/modal.component';
 import { LanguageService } from 'src/app/shared/services/user/language/language.service';
+import { Location } from '@angular/common';
 
 import { TranslateService } from '@ngx-translate/core';
 
@@ -31,6 +32,7 @@ dataReturned: any;
 
   constructor(
     private router: Router,
+    private location: Location,
     public modalController: ModalController,
     private formBuilder: FormBuilder,
     private langService: LanguageService,
@@ -108,6 +110,10 @@ dataReturned: any;
     this.waitingSaveSattings = true;
     console.log('changement de langue: ',this.settingsForm.value.language);
     this.langService.setLanguage(this.settingsForm.value.language);
+  }
+
+  prviousPage() {
+    this.location.back();
   }
 
 }

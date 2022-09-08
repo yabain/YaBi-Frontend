@@ -97,7 +97,7 @@
                 [ngClass]="{ 'is-invalid': submitted && f.user_agree.errors }" formControlName="user_agree">
               <span for="user_agree" class="switch-slider" data-checked="&#x2713;" data-unchecked="&#x2715;"></span><span
                 style="color: black;"> {{'agree' | translate}}
-                <a href="#"><b> {{'privacy' | translate}}</b></a>.</span>
+                <a (click)="navigateToPrivacyPage()"><b> {{'privacy' | translate}}</b></a>.</span>
             </ion-item>
             <div class="alert" *ngIf="error">
               <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 

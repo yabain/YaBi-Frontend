@@ -22,6 +22,10 @@ const routes: Routes = [
     loadChildren: () => import('./front/about/about.module').then( m => m.AboutPageModule)
   },
   {
+    path: 'privacy',
+    loadChildren: () => import('./front/privacy/privacy.module').then( m => m.PrivacyPageModule)
+  },
+  {
     path: 'auth',
     loadChildren: () => import('./front/auth/auth.module').then( m => m.AuthModule)
   },
@@ -38,4 +42,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {}

@@ -40,6 +40,7 @@
               <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
               <strong>{{'error' | translate}}:</strong> {{errorMsg}}
             </div>
+            
             <ion-item>
               <ion-input type="email" id="email" formControlName="email" placeholder="{{'emailAdd' | translate}}"
                  [ngClass]="{ 'is-invalid': submitted && f.email.errors }"></ion-input>

@@ -1,31 +1,20 @@
 import { NgModule } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
-import { PrivacyPage } from './privacy';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-export function createTranslateLoader(httpClient: HttpClient) {
-  return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
-}
+import { IonicModule } from '@ionic/angular';
+
+import { PrivacyPageRoutingModule } from './privacy-routing.module';
+
+import { PrivacyPage } from './privacy.page';
 
 @NgModule({
-  declarations: [
-    PrivacyPage,
-  ],
   imports: [
+    CommonModule,
+    FormsModule,
     IonicModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      // defaultLanguage: 'fr',
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      }
-    })
+    PrivacyPageRoutingModule
   ],
+  declarations: [PrivacyPage]
 })
-
 export class PrivacyPageModule {}
